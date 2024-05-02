@@ -53,8 +53,6 @@ $(function() {
 			JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 			
 			pauseAllSounds();
-			// Is video playing? Pause it!
-			$(".videoOverlay video:visible")[0] ? $(".videoOverlay video:visible")[0].pause() : console.log("No video is playing");
 			
 			// TODO: Replace the two functions below with one function: "presentPlayer(player)"
 			// Play player sound
