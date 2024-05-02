@@ -24,7 +24,7 @@ const pollGamepads = () => {
       continue;
     }
 	   console.log(gamepad);
-	  if (gamepad.buttons[0].pressed == True){console.log("BUTTON")}
+	  if (gamepad[0].buttons[0].pressed == True){console.log("BUTTON")}
 	  
   }
   // Call yourself upon the next animation frame.
