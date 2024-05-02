@@ -1,17 +1,12 @@
 $(function() {
-	window.addEventListener('gamepadconnected', (event) => {
-		console.log('✅ 🎮 A gamepad was connected:', event.gamepad);
-  /*
-    gamepad: Gamepad
-    axes: (4) [0, 0, 0, 0]
-    buttons: (17) [GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton, GamepadButton]
-    connected: true
-    id: "Xbox 360 Controller (STANDARD GAMEPAD Vendor: 045e Product: 028e)"
-    index: 0
-    mapping: "standard"
-    timestamp: 6563054.284999998
-    vibrationActuator: GamepadHapticActuator {type: "dual-rumble"}
-  */
+	window.addEventListener("gamepadconnected", (e) => {
+  	console.log(
+    "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+    e.gamepad.index,
+    e.gamepad.id,
+    e.gamepad.buttons.length,
+    e.gamepad.axes.length,
+  );
 });
 	// Initialize
 	var JP = new Game();
