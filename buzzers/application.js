@@ -1,9 +1,4 @@
 $(function() {
- if (navigator.webkitGetGamepads){
-	const gp = navigator.webkitGetGamepads()[0];
-	if (gp.buttons[0] === 1) {
-      console.log("Button Pressed");
-    }
 	window.addEventListener("gamepadconnected", (e) => {
   	console.log(
     "Gamepad connected at index %d: %s. %d buttons, %d axes.",
