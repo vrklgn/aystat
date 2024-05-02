@@ -1,51 +1,5 @@
 $(function() {
 
-	if ('getGamepads' in navigator) {
- console.log("Well it works") // The API is supported!
-}
-	window.addEventListener("gamepadconnected", (e) => {
-  	console.log(
-    "Gamepad connected at index %d: %s. %d buttons, %d axes.",
-    e.gamepad.index,
-    e.gamepad.id,
-    e.gamepad.buttons.length,
-    e.gamepad.axes.length,
-  );
-})
-
-const pollGamepads = () => {
-  // Always call `navigator.getGamepads()` inside of
-  // the game loop, not outside.
-  const gamepads = navigator.getGamepads();
-  for (const gamepad of gamepads) {
-    // Disregard empty slots.
-    if (!gamepad) {
-      continue;
-    }
-	  	if(gamepad.buttons[0].pressed == true){
-			if(!JP.answersAccepted || playerIsAnswering) return false;
-		playerThatIsAnswering = 1; 
-		console.log ("PLAYER 1");
-	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[0].play();
-		$("#p" + playerThatIsAnswering + "pic").show();
-		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-		$("#playerNameFromAnsweringPlayer").html(playerName);
-		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;}
-    // Process the gamepad state.
-    console.log(gamepad);
-  }
-  // Call yourself upon the next animation frame.
-  // (Typically this happens every 60 times per second.)
-  window.requestAnimationFrame(pollGamepads);
-};
-// Kick off the initial game loop iteration.
-pollGamepads();
 
 	
 	// Initialize
@@ -321,6 +275,52 @@ pollGamepads();
 		$(this).fadeOut('fast');
 	});
 
+	if ('getGamepads' in navigator) {
+ console.log("Well it works") // The API is supported!
+}
+	window.addEventListener("gamepadconnected", (e) => {
+  	console.log(
+    "Gamepad connected at index %d: %s. %d buttons, %d axes.",
+    e.gamepad.index,
+    e.gamepad.id,
+    e.gamepad.buttons.length,
+    e.gamepad.axes.length,
+  );
+})
+
+const pollGamepads = () => {
+  // Always call `navigator.getGamepads()` inside of
+  // the game loop, not outside.
+  const gamepads = navigator.getGamepads();
+  for (const gamepad of gamepads) {
+    // Disregard empty slots.
+    if (!gamepad) {
+      continue;
+    }
+	  	if(gamepad.buttons[0].pressed == true){
+			if(!JP.answersAccepted || playerIsAnswering) return false;
+		playerThatIsAnswering = 1; 
+		console.log ("PLAYER 1");
+	// If player has already answered, return false
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+			// Else, add to answered list as that players answers
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		$("#s" + playerThatIsAnswering)[0].play();
+		$("#p" + playerThatIsAnswering + "pic").show();
+		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();
+		playerIsAnswering = 1;}
+    // Process the gamepad state.
+    console.log(gamepad);
+  }
+  // Call yourself upon the next animation frame.
+  // (Typically this happens every 60 times per second.)
+  window.requestAnimationFrame(pollGamepads);
+};
+// Kick off the initial game loop iteration.
+pollGamepads();
 	//#nameOverlay 
 
 });
