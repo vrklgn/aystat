@@ -18,12 +18,14 @@ const pollGamepads = () => {
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
   for (const gamepad of gamepads) {
-	  if (gamepad.buttons[0].pressed == True)
-	  	{console.log("BUTTON")}
+	  
     // Disregard empty slots.
     if (!gamepad) {
       continue;
     }
+	   console.log(gamepad);
+	  if (gamepad.buttons[0].pressed == True){console.log("BUTTON")}
+	  
   }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
