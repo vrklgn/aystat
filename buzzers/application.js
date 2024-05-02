@@ -102,9 +102,7 @@ $(function() {
 				}
 								
 			} else {
-				// Wrong		
-				JP.players[playerThatIsAnswering-1].score -= JP.currentQuestion.points;
-				
+
 				// Play wrong sound
 				$("#sBidup")[0].play();
 				
