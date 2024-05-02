@@ -30,7 +30,7 @@ const pollGamepads = () => {
 // Kick off the initial game loop iteration.
 pollGamepads();
 
-	if ((gamepad.buttons[0].pressed == True}}{
+	if ((gamepad.buttons[0].pressed == True)){
 		console.log("BUTTON")}
 	// Initialize
 	var JP = new Game();
