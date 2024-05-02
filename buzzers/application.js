@@ -12,6 +12,25 @@ $(function() {
     e.gamepad.axes.length,
   );
 })
+
+const pollGamepads = () => {
+  // Always call `navigator.getGamepads()` inside of
+  // the game loop, not outside.
+  const gamepads = navigator.getGamepads();
+  for (const gamepad of gamepads) {
+    // Disregard empty slots.
+    if (!gamepad) {
+      continue;
+    }
+    // Process the gamepad state.
+    console.log(gamepad);
+  }
+  // Call yourself upon the next animation frame.
+  // (Typically this happens every 60 times per second.)
+  window.requestAnimationFrame(pollGamepads);
+};
+// Kick off the initial game loop iteration.
+pollGamepads();
 	// Initialize
 	var JP = new Game();
 	
