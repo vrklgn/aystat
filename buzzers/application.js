@@ -12,6 +12,7 @@ $(function() {
 	
 	JP.players.push(player1, player2, player3);
 	JP.boards.push(board1, board2);
+	JP.answersAccepted = true;
 	
 	// Old set-up
 	var round = 1,
@@ -24,81 +25,10 @@ $(function() {
 	
 	$(".overlay").hide();
 		
-	// Collect headers and questions and create objects
-	$(".round").each(function(index){
-		$(this).find(".category").each(function(e){
-			var categoryTitle = $(this).find("h1").html(),
-				newCategory = new Category();
-			newCategory.title = categoryTitle;
-			
-			// Find questions in category and add to category
-			$(this).find(".q").each(function(questionIndex){
-				var questionHTML = $(this).html(),
-					questionPoints = parseInt($(this).parent().find("span").html()),
-					newQuestion = new Question();
-				newQuestion.title = questionHTML;
-				newQuestion.points = questionPoints;
-				newCategory.questions.push(newQuestion);	
-			});
-			
-			// Add category to board			
-			JP.boards[index].categories.push(newCategory);
-		});
-	});
 	
-	// A question is clicked: Show it
-	$(".category div").click(function(e){
-		if($(this).data("hasBeenDisplayed") == 1) return false;
-		$(this).data("hasBeenDisplayed", 1);
-		questionCount++;
-		questionAvailable = 1; // Replace with: if(JP.currentQuestion.shown == false) or something similar
-
-		var questionIndex = $(this).index()-1,
-			categoryIndex = $(this).parent().index(),
-			boardIndex = $(this).parent().parent().index();
-		JP.currentQuestion = JP.boards[boardIndex].categories[categoryIndex].questions[questionIndex];
-		JP.currentQuestionElement = $(this);
-				
-		// Set data to be displayed
-		$overlay = $(".overlay");
-		$overlay.find("p").html(JP.currentQuestion.title)
-			.end().find(".points span").html(JP.currentQuestion.points);
-			
-		// TO-DO: Animate bubble - flip and expand
-		// Remove the blob that was clicked
-		$(this).animate({opacity: 0.0}, 100);
-		
-		// Play sound if sound bubble
-		if ($(this).hasClass("video")) { // If not, play if it is a video
-			// Fade in background, and once that is finished, show and play the movie
-			$(".videoOverlay").fadeIn('fast', function(){
-				$(".videoOverlay video").eq(questionIndex).fadeIn('fast')[0].play();
-			});
-			// Set OK to answer! 
-			JP.answersAccepted = true;
-		}
-		setTimeout(setOKToAnswer,1500);
-		
-		// Fade in overlay
-		$(this).hasClass("video") ? 0 : $(".overlay").fadeIn();
-		
-	});
-	
-	$("body").keyup(function(e){
-	});
-	
-	// TODO: Remove this and set in intro function
-	// Set first text for intro
-	$("#categories h1").html(JP.boards[0].categories[0].title);
 	
 	// Keyboard events
 	$("body").keyup(function(e){
-		
-		// Set OK to answer!
-		if(e.keyCode == "13") {
-			// OK to answer!
-			JP.answersAccepted = true;
-		}
 		
 		// A player tries to answer
 		if((e.keyCode >= 97 && e.keyCode <= 99) || (e.keyCode >= 49 && e.keyCode <= 51)){
