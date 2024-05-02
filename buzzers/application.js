@@ -81,6 +81,7 @@ $(function() {
 			// Right?
 			if(e.keyCode == 82) {
 				removeOverlay();
+				reset();
 				
 				// Play sound
 				if(JP.currentQuestionElement.hasClass("sound")){
