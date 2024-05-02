@@ -170,7 +170,7 @@ $(function() {
 		}
 		
 		// Set OK to answer!
-		if(e.keyCode == "13" && questionAvailable) {
+		if(e.keyCode == "13") {
 			// OK to answer!
 			JP.answersAccepted = true;
 		}
