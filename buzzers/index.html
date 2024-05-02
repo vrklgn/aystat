@@ -1,0 +1,351 @@
+<html>
+<head>
+	<title>Jeopardesu</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script src="jquery.js"></script>
+	<script src="models.js"></script>
+	<script src="application.js"></script>
+</head>
+<body>
+<div id="nameOverlay"></div>
+	<!-- Audio files -->
+	<div id="sounds">
+		<audio id="s1" preload="auto" autobuffer> 
+		  <source src="sound/effect1.mp3" />
+		</audio>
+		<audio id="s2" preload="auto" autobuffer> 
+		  <source src="sound/effect2.mp3" />
+		</audio>
+		<audio id="s3" preload="auto" autobuffer> 
+		  <source src="sound/effect3.mp3" />
+		</audio>
+		<audio id="sWrong" preload="auto" autobuffer> 
+		  <source src="sound/wrong.mp3" />
+		</audio>
+		<audio id="sKukarUr" preload="auto" autobuffer> 
+		  <source src="sound/detkukarur.mp3" />
+		</audio>
+	</div>
+	
+	<div id="testSounds">
+		
+	</div>
+	
+	<div id="finalQuestionCategory">
+		<h1>Sista frågan</h1><!-- Ändra det här plox -->
+	</div>
+	
+	<div id="finalQuestion">
+		<!-- Ändra det här plox -->
+		<h1>SÅ MÅNGA BESÖKARE HAR BESÖKT UPPCON TOTALT ENLIGT WIKIPEDIA</h1>
+		<!-- Svaret är 20000 -->
+	</div>
+	
+	<!-- Player pictures -->
+	<img src="img/nyancat.png" class="playerpic" id="p1pic" />
+	<img src="img/lazer.jpg" class="playerpic" id="p2pic" />
+	<img src="img/popipo.jpg" class="playerpic" id="p3pic" />
+	
+	<h2 id="wrong">FEL</h2>
+	<h2 id="right">RÄTT</h2>
+	<h2 id="playerNameFromAnsweringPlayer"></h2>
+	<audio id="sBidup" preload="auto" autobuffer><source src="sound/bidup.mp3" /></audio>
+	
+	<div id="highscore">
+		<div class="p1"><p style="font-size:40px;" id="p1Name">Tantan</p><span>000</span></div>
+		<div class="p2"><p style="font-size:40px;" id="p2Name">Fluff</p><span>000</span></div>
+		<div class="p3"><p style="font-size:40px;" id="p3Name">Antila</p><span>000</span></div>
+	</div>
+	
+	<!-- Categories -->
+	<div id="categories">
+		<h1>HÄR ÄR EN KATEGORI</h1>
+	</div>
+	
+	<div class="videoOverlay">
+		<video src="video/01.mp4">
+		</video>
+		<video src="video/02.mp4">
+		</video>
+		<video src="video/03.mp4">
+		</video>
+		<video src="video/04.mp4">
+		</video>
+		<video src="video/05.mp4">
+		</video>
+	</div>
+	
+	<!-- Question in focus -->
+	<div class="overlay">
+		<div class="bubble">
+			<div class="wrapper">
+				<div class="innerWrapper">
+					<div class="points"><span>xxx</span></div>
+					<p></p>
+					<div class="endline"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="roundsWrapper">
+	<div id="round1" class="round">
+		<div class="category c1">
+			<h1>MANLIGA MÄN &amp; MAGISKA FLICKOR</h1>
+			<div class="one">
+				<span>100</span>
+				<div class="q">En liten tjej med jättelånga flätor</div>
+			</div>
+			<div class="two">
+				<span>200</span>
+				<div class="q">En passionerad muskelalkemist</div>
+			</div>
+			<div class="three">
+				<span>300</span>
+				<div class="q">Denna lilla flicka får sina magiska krafter från en fisk</div>
+			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q">Denna karaktär kan tolkas som en manlig man och en magisk flicka</div>
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q">Mannen med björnnäven</div>
+			</div>	
+		</div>
+		
+		<div class="category c2">
+			<h1>RÖSTSKÅDESPELARE</h1>
+			<div class="one">
+				<span>100</span>
+				<div class="q">Amerikansk röstskådespleare till Edward Elric från Full Metal Alchemist</div>
+			</div>
+			<div class="two">
+				<span>200</span>
+				<div class="q">Amerikansk röstskådespleare till Tamaki från "Ouran High School Host Club"</div>				
+			</div>
+			<div class="three">
+				<span>300</span>
+				<div class="q">Känd amerikansk röstskådespelare som besökte NärCon 2011</div>
+			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q">Amerikansk röstskådespleare till bikaraktären Pony i "Fullmetal Panic Fumoffu"</div>			
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q">Röstskådspelerare till bl.a. Akama, John, Moss &amp; Sniper i Silver Fang</div>
+			</div>	
+		</div>
+		
+		<div class="category c3">
+			<h1>GISSA COSPLAYEN</h1>
+			<div class="one">
+				<span>100</span>
+				<div class="q"><IMG SRC="picq/pic1.jpg"></div>
+			</div>
+			<div class="two">
+				<span>200</span>
+				<div class="q"><IMG SRC="picq/pic2.jpg"></div>
+			</div>
+			<div class="three">
+				<span>300</span>
+				<div class="q"><IMG SRC="picq/pic3.jpg"></div>
+			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q"><IMG SRC="picq/pic4.jpg"></div>
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q"><IMG SRC="picq/pic5.jpg"></div>
+			</div>	
+		</div>
+	
+		<div class="category c4">
+			<h1>KÄNDA MEMES</h1>
+			<div class="one">
+				<span>100</span>
+				<div class="q">Äventyrslusten ungdom avslutar sin karriär efter svår skada i benet</div>
+			</div>
+			<div class="two">
+				<span>200</span>
+				<div class="q">Äldre dam beskriver vem som är monark i olika tropiska zoner?</div>
+			</div>
+			<div class="three">
+				<span>300</span>
+				<div class="q">Plats i södra grekland som omnämns i Frank Miller serie?</div>
+			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q">Charlie Smidts husdjur med oanade musikaliska talanger</div>
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q">Detta djur har sedan teckningstävlingen UppCon:09 inte tillåtits på UppCon</div>
+			</div>	
+		</div>
+	
+		<div class="category c5">
+			<h1>ROBOTAR</h1>
+			<div class="one">
+				<span>100</span>
+				<div class="q">En klassisk vit, blå och röd robot som finns som fullskalig staty i Odaiba</div>
+			</div>
+			<div class="two">
+				<span>200</span>
+				<div class="q">En mecha med tre olika former; Robotform, Planform och Mittimellanform</div>
+			</div>
+			<div class="three">
+				<span>300</span>
+				<div class="q">Detta är namnet på både huvudpersonen och serien i den absolut första animen någonsin</div>
+			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q">En energifylld portabel robot med fäbless för morgongymnastik</div>
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q">En skruvförsedd robot som bara önskar att få gå i skolan som en vanlig flicka.</div>
+			</div>	
+		</div>
+	</div>
+	<!-- End of round 1 -->
+
+
+	
+	<!-- Start of round 2 -->
+	<div id="round2" class="round">
+		<div class="category c1">
+			<h1>ÖVERSATT ANIME</h1>
+			<div class="one">
+				<span>200</span>
+				<div class="q">"Helvetes-sjunga"</div>
+			</div>
+			<div class="two">
+				<span>400</span>
+				<div class="q">"Vi vet fortfarande inte namnet på blomman vi såg den där dagen"</div>
+			</div>
+			<div class="three">
+				<span>600</span>
+				<div class="q">"Virvelorkan-krönikan"</div>
+			</div>
+			<div class="four">
+				<span>800</span>
+				<div class="q">"Capsicum Annuum"</div>
+			</div>
+			<div class="five">
+				<span>1000</span>
+				<div class="q">"Ljusfartselguden Albegas"</div>
+			</div>	
+		</div>
+		
+		<div class="category c2">
+					<h1>UPPCONKUNSKAP</h1>
+					<div class="one">
+						<span>200</span>
+						<div class="q">Daniel Mauno Pettersons nya smeknamn efter en intervju med 18 Minuter</div>
+					</div>
+					<div class="two">
+						<span>400</span>
+						<div class="q">Detta är namnet på UppCons maskot med orange tröja och svarta handskar</div>
+					</div>
+					<div class="three">
+						<span>600</span>
+						<div class="q">Denna djurartx äter inte Mangakungen</div>
+					</div>
+					<div class="four">
+						<span>800</span>
+						<div class="q">Vilket år vann Lendai cosplaytävlingen på UppCon</div>
+					</div>
+					<div class="five">
+						<span>1000</span>
+						<div class="q">Konferencier på UppCon som av händelse även fyller år idag</div>
+					</div>
+		</div>
+		
+		<div class="category c3">
+			<h1>VAD HÄNDER EFTER?</h1>
+			<div class="one video">
+				<span>200</span>
+				<div class="q">Videofråga</div>
+			</div>
+			<div class="two video">
+				<span>400</span>
+				<div class="q">Videofråga</div>
+			</div>
+			<div class="three video">
+				<span>600</span>
+				<div class="q">Videofråga</div>
+			</div>
+			<div class="four video">
+				<span>800</span>
+				<div class="q">Videofråga</div>
+			</div>
+			<div class="five video">
+				<span>1000</span>
+				<div class="q">Videofråga</div>
+			</div>
+		</div>
+	
+		<div class="category c4">
+			<h1>SIDEKICKS</h1>
+			<div class="one">
+				<span>200</span>
+				<div class="q">En entrepenörslagd iller vill att du ska skriva på skumt kontrakt för att bli magisk flicka</div>
+			</div>
+			<div class="two">
+				<span>400</span>
+				<div class="q">En pålitig rymd-corgi med hackingkunskaper</div>
+			</div>
+			<div class="three">
+				<span>600</span>
+				<div class="q">En linslus till katt som figurerar i samtliga Trigun-avsnitt.</div>
+			</div>
+			<div class="four">
+				<span>800</span>
+				<div class="q">En Magic Knight Rayearth-sidekick med namn efter en av CLAMP-skaparna</div>
+			</div>
+			<div class="five">
+				<span>1000</span>
+				<div class="q">En perverterad Pacman som styr över ninjaklan</div>
+			</div>	
+		</div>
+	
+		<div class="category c5">
+			<h1>ANIMEDANSER</h1>
+			<div class="one sound">
+			    <span>200</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/01.mp3" /></audio>
+			</div>
+			<div class="two sound">
+			    <span>400</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/02.mp3" /></audio>				
+			</div>
+			<div class="three sound">
+			    <span>600</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/03.mp3" /></audio>
+			</div>
+			<div class="four sound">
+			    <span>800</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/04.mp3" /></audio>				
+			</div>
+			<div class="five sound">
+			    <span>1000</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/05.mp3" /></audio>
+			</div>	
+		</div>
+	</div>
+	<!-- End of round2 -->
+</div>
+<!-- End of wrapper -->
+
+	
+</body>
+</html>
