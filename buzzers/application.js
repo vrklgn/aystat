@@ -18,7 +18,8 @@ const pollGamepads = () => {
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
   for (const gamepad of gamepads) {
-	  if ((gamepad.buttons[0].pressed == True)){console.log("BUTTON")}
+	  if (gamepad.buttons[0].pressed == True)
+	  	{console.log("BUTTON")}
     // Disregard empty slots.
     if (!gamepad) {
       continue;
