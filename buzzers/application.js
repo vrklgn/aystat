@@ -1,5 +1,5 @@
 $(function() {
-
+ if (navigator.webkitGetGamepads){
 	const gp = navigator.webkitGetGamepads()[0];
 	if (gp.buttons[0] === 1) {
       console.log("Button Pressed");
@@ -12,7 +12,7 @@ $(function() {
     e.gamepad.buttons.length,
     e.gamepad.axes.length,
   );
-});
+});}
 	// Initialize
 	var JP = new Game();
 	
