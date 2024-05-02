@@ -70,7 +70,7 @@ $(function() {
 		
 		// Judgement - "W" or "R" key is pressed
 		if(e.keyCode == "82" || e.keyCode == "87"){
-			if(!playerIsAnswering && e.keyCode == "87" && questionAvailable){
+			if(!playerIsAnswering && e.keyCode == "87"){
 				$("#sBidup")[0].play();
 				removeOverlay();
 				reset();
@@ -114,26 +114,7 @@ $(function() {
 			}
 		}	
 		
-		// MAN TRYCKER PÅ M
-		if(e.keyCode == 77){
-			cheatStartRound2();
-		}
 		
-		// MAN TRYCKER PÅ H
-		if(e.keyCode == 72){
-			if(!questionAvailable) {
-				toggleHighScores();	
-			}
-		}
-		
-		// Spacebar. Ifall en video visas, pausa / spela den
-		if (e.keyCode == 32) {
-			if(JP.currentQuestionElement.hasClass("sound")){
-				JP.currentQuestionElement.find("audio")[0].pause();
-			} else if (JP.currentQuestionElement.hasClass("video")) {
-				toggleVisibleVideoPlayState();
-			}
-		}
 		
 		// Man trycker på "P". Spela det-kukar-ur-ljudet
 		if (e.keyCode == 80) {
