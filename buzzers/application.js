@@ -24,6 +24,7 @@ const pollGamepads = () => {
     if (!gamepad) {
       continue;
     }
+	  console.log(gamepad.buttons[0].pressed)
 	if (gamepad.buttons[0].pressed == True){console.log("YELLOW")};	   
 	  
   }
