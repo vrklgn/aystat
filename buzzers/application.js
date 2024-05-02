@@ -25,10 +25,8 @@ const pollGamepads = () => {
       continue;
     }
 	  console.log(gamepad.buttons[0].pressed)
-	  
-  // Call yourself upon the next animation frame.
-  // (Typically this happens every 60 times per second.)
-  window.requestAnimationFrame(pollGamepads);
+	  console.log(gamepad)
+		  window.requestAnimationFrame(pollGamepads);
 }};
 // Kick off the initial game loop iteration.
 pollGamepads();
