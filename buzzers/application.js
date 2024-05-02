@@ -30,7 +30,7 @@ $(function() {
 	// Keyboard events
 	$("body").keyup(function(e){
 
-		if((e.keycode == 81)){
+		if((e.keyCode == 81)){
 			JP.answersAccepted = true;
 		}
 		
