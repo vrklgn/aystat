@@ -49,9 +49,7 @@ const pollGamepads = () => {
 			
 			// Allow judgement, prevents more answers
 			playerIsAnswering = 1;}
-	  
-  }
-		if(gamepad.buttons[1].pressed == true){
+	if(gamepad.buttons[1].pressed == true){
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2")
 	// If player has already answered, return false
@@ -76,7 +74,6 @@ const pollGamepads = () => {
 			// Allow judgement, prevents more answers
 			playerIsAnswering = 1;}
 	  
-  }
 			if(gamepad.buttons[2].pressed == true){
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3")
@@ -102,7 +99,6 @@ const pollGamepads = () => {
 			// Allow judgement, prevents more answers
 			playerIsAnswering = 1;}
 	  
-  }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
