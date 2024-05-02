@@ -23,7 +23,7 @@ const pollGamepads = () => {
       continue;
     }
 	  	if(gamepad.buttons[0].pressed == true){
-			if(!JP.answersAccepted || playerIsAnswering) return false
+			if(!JP.answersAccepted || playerIsAnswering) return false;
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 	// If player has already answered, return false
