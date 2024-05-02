@@ -25,20 +25,6 @@ const pollGamepads = () => {
       continue;
     }
 	  console.log(gamepad.buttons[0].pressed)
-	if(gamepad.buttons[0].pressed == true){
-		playerThatIsAnswering = 1; 
-		console.log ("PLAYER 1");
-	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[0].play();
-		$("#p" + playerThatIsAnswering + "pic").show();
-		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-		$("#playerNameFromAnsweringPlayer").html(playerName);
-		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;}
 	  
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
