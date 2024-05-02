@@ -29,30 +29,21 @@ const pollGamepads = () => {
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 	// If player has already answered, return false
-	if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
-			JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-			pauseAllSounds();
-			
-			// TODO: Replace the two functions below with one function: "presentPlayer(player)"
-			// Play player sound
-			$("#s" + playerThatIsAnswering)[0].play();
-			
-			// Show AWESOME pic from answering player
-			$("#p" + playerThatIsAnswering + "pic").show();
-			
-			// Show name from the player that is answering
-			var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-			$("#playerNameFromAnsweringPlayer").html(playerName);
-			$("#playerNameFromAnsweringPlayer").show();
-			
-			// Allow judgement, prevents more answers
-			playerIsAnswering = 1;}
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		$("#s" + playerThatIsAnswering)[0].play();
+		$("#p" + playerThatIsAnswering + "pic").show();
+		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();
+		playerIsAnswering = 1;}
 	  
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
-}};
+};
 // Kick off the initial game loop iteration.
 pollGamepads();
 
