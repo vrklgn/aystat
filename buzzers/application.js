@@ -70,7 +70,8 @@ pollGamepads();
 		if((e.keyCode == 81)){
 			JP.answersAccepted = true;
 		}
-		
+
+		if(gamepad.buttons[0].pressed == true){playerThatIsAnswering = 1; console.log ("OH HELLO")}
 		// A player tries to answer
 		if((e.keyCode >= 97 && e.keyCode <= 99) || (e.keyCode >= 49 && e.keyCode <= 51)){
 			// Stop if players can't answer or if a player is answering
