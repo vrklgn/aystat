@@ -12,7 +12,7 @@ $(function() {
 	
 	JP.players.push(player1, player2, player3);
 	JP.boards.push(board1, board2);
-	JP.answersAccepted = true;
+	
 	
 	// Old set-up
 	var round = 1,
@@ -29,6 +29,10 @@ $(function() {
 	
 	// Keyboard events
 	$("body").keyup(function(e){
+
+		if((e.keycoade == 81)){
+			JP.answersAccepted = true;
+		}
 		
 		// A player tries to answer
 		if((e.keyCode >= 97 && e.keyCode <= 99) || (e.keyCode >= 49 && e.keyCode <= 51)){
@@ -78,9 +82,6 @@ $(function() {
 			if(!playerIsAnswering) return false;
 			// Right?
 			if(e.keyCode == 82) {
-				// Correct!							
-				//$("#right").show();
-				JP.players[playerThatIsAnswering-1].score += JP.currentQuestion.points;
 				removeOverlay();
 				
 				// Play sound
@@ -88,17 +89,6 @@ $(function() {
 					JP.currentQuestionElement.find("audio")[0].play();
 					// Set OK to answer!
 					JP.answersAccepted = true;
-				}
-
-				
-				// If right, and video queston - start playing the video again
-				//$(".videoOverlay video:visible")[0] ? $(".videoOverlay video:visible")[0].play() : reset();
-				if ($(".videoOverlay video:visible")[0]) {
-					$(".videoOverlay video:visible")[0].play();
-				} else {
-					reset();
-					// If not videoOverlay, show points and count up
-					showHighScoreAndAnimate(playerThatIsAnswering);
 				}
 								
 			} else {
