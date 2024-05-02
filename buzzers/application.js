@@ -27,61 +27,11 @@ const pollGamepads = () => {
 	  console.log(gamepad.buttons[0].pressed)
 	if(gamepad.buttons[0].pressed == true){
 		playerThatIsAnswering = 1; 
-		console.log ("PLAYER 1")
+		console.log ("PLAYER 1");
 	// If player has already answered, return false
 	if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
 			JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-			
-			pauseAllSounds();
-			
-			// TODO: Replace the two functions below with one function: "presentPlayer(player)"
-			// Play player sound
-			$("#s" + playerThatIsAnswering)[0].play();
-			
-			// Show AWESOME pic from answering player
-			$("#p" + playerThatIsAnswering + "pic").show();
-			
-			// Show name from the player that is answering
-			var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-			$("#playerNameFromAnsweringPlayer").html(playerName);
-			$("#playerNameFromAnsweringPlayer").show();
-			
-			// Allow judgement, prevents more answers
-			playerIsAnswering = 1;}
-	if(gamepad.buttons[1].pressed == true){
-		playerThatIsAnswering = 2; 
-		console.log ("PLAYER 2")
-	// If player has already answered, return false
-	if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-			JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-			
-			pauseAllSounds();
-			
-			// TODO: Replace the two functions below with one function: "presentPlayer(player)"
-			// Play player sound
-			$("#s" + playerThatIsAnswering)[0].play();
-			
-			// Show AWESOME pic from answering player
-			$("#p" + playerThatIsAnswering + "pic").show();
-			
-			// Show name from the player that is answering
-			var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-			$("#playerNameFromAnsweringPlayer").html(playerName);
-			$("#playerNameFromAnsweringPlayer").show();
-			
-			// Allow judgement, prevents more answers
-			playerIsAnswering = 1;}
-	  
-			if(gamepad.buttons[2].pressed == true){
-		playerThatIsAnswering = 3; 
-		console.log ("PLAYER 3")
-	// If player has already answered, return false
-	if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-			JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-			
 			pauseAllSounds();
 			
 			// TODO: Replace the two functions below with one function: "presentPlayer(player)"
@@ -102,7 +52,7 @@ const pollGamepads = () => {
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
-};
+}};
 // Kick off the initial game loop iteration.
 pollGamepads();
 
