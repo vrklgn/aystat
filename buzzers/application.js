@@ -11,7 +11,7 @@ $(function() {
     e.gamepad.buttons.length,
     e.gamepad.axes.length,
   );
-});}
+})
 	// Initialize
 	var JP = new Game();
 	
