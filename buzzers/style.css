@@ -6,24 +6,7 @@
 	z-index: 300;
 }*/
 
-video {
-	display: none;
-	position: absolute;
-	top:0;
-	left: 0;
-	z-index: 9001;
-	height: 100%;
-	width: 100%;
-}
 
-.videoOverlay {
-	background-color: #000;
-	z-index: 101;
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	display: none;
-}
 
 #testSounds {
 	width: 100%;
@@ -33,38 +16,6 @@ video {
 	left: 0;
 	background-color: #00b7c5;
 	z-index: 4000;	
-}
-
-#highscore {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: #00b7c5;
-	z-index: 10000;
-	display: none;
-}
-
-#highscore div {
-	color: #00b7c5;
-	width: 280px;
-	height: 180px;
-	padding-top: 100px;
-	float: left;
-	text-align: center;
-	border-radius: 300px;
-	font-size: 120px;
-	text-transform: uppercase;
-	line-height: 80px;
-	margin-top: 160px;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	background-color: #fff;
-	position: relative;
-	left: 15%;
-	padding-bottom: 50px;
-	padding-top: 50px;
 }
 
 #player {
@@ -91,8 +42,8 @@ html {
 }
 
 body {
-	background-color: #00b7c5;
-	font-family: "LG", Helvetica, Arial, sans-serif;
+	background-color: #000;
+	font-family: "Lota Grotesque", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	color: #424242;
 	margin: 0;
