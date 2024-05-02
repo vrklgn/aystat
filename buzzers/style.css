@@ -9,6 +9,9 @@
 #intro {
 	position: relative;
 	top: 50%;
+	left: 50%;
+	font-weight: bold;
+	font-family: "Inconsolata";
 }
 
 
