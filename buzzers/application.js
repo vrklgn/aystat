@@ -1,4 +1,8 @@
 $(function() {
+
+	if ('getGamepads' in navigator) {
+ console.log("Well it works") // The API is supported!
+}
 	window.addEventListener("gamepadconnected", (e) => {
   	console.log(
     "Gamepad connected at index %d: %s. %d buttons, %d axes.",
