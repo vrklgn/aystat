@@ -18,6 +18,7 @@ const pollGamepads = () => {
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
   for (const gamepad of gamepads) {
+	  if ((gamepad.buttons[0].pressed == True)){console.log("BUTTON")}
     // Disregard empty slots.
     if (!gamepad) {
       continue;
@@ -30,8 +31,7 @@ const pollGamepads = () => {
 // Kick off the initial game loop iteration.
 pollGamepads();
 
-	if ((gamepad.buttons[0].pressed == True)){
-		console.log("BUTTON")}
+	
 	// Initialize
 	var JP = new Game();
 	
