@@ -43,7 +43,7 @@ const pollGamepads = () => {
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
-};
+}};
 // Kick off the initial game loop iteration.
 pollGamepads();
 
