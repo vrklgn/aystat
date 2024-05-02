@@ -25,7 +25,7 @@ const pollGamepads = () => {
       continue;
     }
 	  console.log(gamepad.buttons[0].pressed)
-	if (gamepad.buttons[0].pressed == true){console.log("YELLOW")};	   
+	if(gamepad.buttons[0].pressed == true){playerThatIsAnswering = 1; console.log ("OH HELLO")}
 	  
   }
   // Call yourself upon the next animation frame.
@@ -71,7 +71,7 @@ pollGamepads();
 			JP.answersAccepted = true;
 		}
 
-		if(gamepad.buttons[0].pressed == true){playerThatIsAnswering = 1; console.log ("OH HELLO")}
+		
 		// A player tries to answer
 		if((e.keyCode >= 97 && e.keyCode <= 99) || (e.keyCode >= 49 && e.keyCode <= 51)){
 			// Stop if players can't answer or if a player is answering
