@@ -23,7 +23,7 @@ const pollGamepads = () => {
     if (!gamepad) {
       continue;
     }
-	   console.log(gamepad.0.button);
+	   console.log(gamepad.0.buttons);
 	  
   }
   // Call yourself upon the next animation frame.
