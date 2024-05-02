@@ -22,6 +22,20 @@ const pollGamepads = () => {
     if (!gamepad) {
       continue;
     }
+	  	if(gamepad.buttons[0].pressed == true){
+		playerThatIsAnswering = 1; 
+		console.log ("PLAYER 1");
+	// If player has already answered, return false
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+			// Else, add to answered list as that players answers
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		$("#s" + playerThatIsAnswering)[0].play();
+		$("#p" + playerThatIsAnswering + "pic").show();
+		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();
+		playerIsAnswering = 1;}
     // Process the gamepad state.
     console.log(gamepad);
   }
