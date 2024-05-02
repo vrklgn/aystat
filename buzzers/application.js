@@ -22,8 +22,6 @@ const pollGamepads = () => {
     if (!gamepad) {
       continue;
     }
-    // Process the gamepad state.
-    console.log(gamepad);
   }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
@@ -31,6 +29,9 @@ const pollGamepads = () => {
 };
 // Kick off the initial game loop iteration.
 pollGamepads();
+
+	if ((gamepad.buttons[0].pressed == True}}{
+		console.log("BUTTON")}
 	// Initialize
 	var JP = new Game();
 	
