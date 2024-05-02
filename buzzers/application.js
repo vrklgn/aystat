@@ -17,14 +17,14 @@ const pollGamepads = () => {
   // Always call `navigator.getGamepads()` inside of
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
-	console.log(gamepads[0].buttons);
+	
   for (const gamepad of gamepads) {
 	  
     // Disregard empty slots.
     if (!gamepad) {
       continue;
     }
-	   
+	  console.log(gamepad.buttons);	   
 	  
   }
   // Call yourself upon the next animation frame.
