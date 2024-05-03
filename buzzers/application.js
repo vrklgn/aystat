@@ -35,7 +35,8 @@ $(function() {
 	$("body").keyup(function(e){
 
 		if((e.keyCode == 81)){
-			JP.answersAccepted = true;
+			setOKToAnswer() 
+			//JP.answersAccepted = true;
 		}
 
 		
