@@ -151,7 +151,7 @@ $(function() {
 	}
 	
 	function removeOverlay(){
-		$(".playerpic").hide();
+		$(".playerpic").hide().fadeOut();
 		$("#wrong").hide();
 		$("#right").hide();
 		$("#playerNameFromAnsweringPlayer").hide();
@@ -163,25 +163,7 @@ $(function() {
 		playerIsAnswering = 0;
 	}
 	
-	function startRound2(){
-		$("#round1").fadeOut('fast', function(e){
-			showRound2();
-		});
-		round = 2;
-	}
-	
-	function showRound2(){
-		currentCategoryHeader = 0;
-		$("#categories h1").html(JP.boards[1].categories[0].title);
-		$("#categories h1").fadeIn();
-		$("#categories").fadeIn();
-		$("#round2").fadeIn();
-	}
-	
-	function cheatStartRound2(){
-		questionCount = 25;
-		reset();
-	}
+
 	
 	function toggleHighScores(){
 		if($("#highscore").is(":visible")){
@@ -204,16 +186,6 @@ $(function() {
 		});
 	}
 	
-	var showingLastQuestionCategory = 0;
-	function showLastQuestionCategory(){
-		// Is showing last category
-		showingLastQuestionCategory = 1;
-		$("#finalQuestionCategory").fadeIn();
-	}
-	
-	function showLastQuestion(){
-		$("#finalQuestion").fadeIn();	
-	}
 	
 	function toggleVisibleVideoPlayState(){
 		$(".videoOverlay video:visible")[0].paused ? $(".videoOverlay video:visible")[0].play() : $(".videoOverlay video:visible")[0].pause();
