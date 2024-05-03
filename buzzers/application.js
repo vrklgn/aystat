@@ -18,6 +18,7 @@ $(function() {
 	
 	
 	// Old set-up
+	console.log("BUZZERS ❌");
 	var round = 1,
 		questionAvailable = 0,
 		playerIsAnswering = 0,
@@ -120,6 +121,7 @@ $(function() {
 	// TODO: Rename to newRound()
 	function reset(){		
 		// Reset all cool stuff
+		console.log("BUZZERS ❌");
 		JP.answersAccepted = false,
 		questionAvailable = 0,
 		playerIsAnswering = 0;
@@ -201,7 +203,7 @@ $(function() {
 	
 	function setOKToAnswer() {
 			JP.answersAccepted = true;
-			console.log("Now OK to answer");
+			console.log("BUZZERS ✅");
 	}
 	
 	function showHighScoreAndAnimate(playerThatAnswered) {
