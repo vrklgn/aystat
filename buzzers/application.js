@@ -88,13 +88,6 @@ $(function() {
 				$("#sCorrect")[0].play();
 				removeOverlay();
 				reset();
-				
-				// Play sound
-				if(JP.currentQuestionElement.hasClass("sound")){
-					JP.currentQuestionElement.find("audio")[0].play();
-					// Set OK to answer!
-					JP.answersAccepted = true;
-				}
 								
 			} else {
 
