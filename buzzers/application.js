@@ -85,6 +85,7 @@ $(function() {
 			if(!playerIsAnswering) return false;
 			// Right?
 			if(e.keyCode == 82) {
+				$("#sCorrect")[0].play();
 				removeOverlay();
 				reset();
 				
