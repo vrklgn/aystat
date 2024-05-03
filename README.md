@@ -4,8 +4,12 @@ AYSAT
 QUICK GUIDE
 ==========
 
-HÖGER PILTANGENT => Går igenom kategorier
+Q = 🏁 ACTIVATE BUZZERS
 
-W = Rätt
-R = Fel
-H = Tar fram SCOREBOARD
+1,2,3 = 1️⃣2️⃣3️⃣ BUZZ IN
+
+W = ❌ WRONG ANSWER
+
+R = ✅ RIGHT ANSWER
+
+P = 🎶 BANGING TUNES 🎶
