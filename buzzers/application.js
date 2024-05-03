@@ -200,10 +200,8 @@ $(function() {
 	}
 	
 	function setOKToAnswer() {
-		if (questionAvailable) {
 			JP.answersAccepted = true;
 			console.log("Now OK to answer");
-		}
 	}
 	
 	function showHighScoreAndAnimate(playerThatAnswered) {
