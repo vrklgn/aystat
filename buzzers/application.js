@@ -244,7 +244,7 @@ $(function() {
 	});
 
 	if ('getGamepads' in navigator) {
- console.log("Gamepads is available and can be used") // The API is supported!
+ console.log("Gamepad API Available") // The API is supported!
 }
 	window.addEventListener("gamepadconnected", (e) => {
   	console.log(
