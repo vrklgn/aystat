@@ -11,7 +11,7 @@ $(function() {
 	
 	// TODO: set dynamically after counting boards in HTML	
 	var board1 = new Board(),
-		board2 = new Board();
+	board2 = new Board();
 	
 	JP.players.push(player1, player2, player3);
 	JP.boards.push(board1, board2);
