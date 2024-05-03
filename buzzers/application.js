@@ -1,21 +1,14 @@
 $(function() {
-
-
-	
-	// Initialize
 	var JP = new Game();
-	
-	var player1 = new Player(),
-		player2 = new Player(),
-		player3 = new Player();
+	var player1 = new Player();
+	var player2 = new Player();
+	var player3 = new Player();
 	
 	// TODO: set dynamically after counting boards in HTML	
-	var board1 = new Board(),
-	board2 = new Board();
+	var board1 = new Board();
 	
 	JP.players.push(player1, player2, player3);
-	JP.boards.push(board1, board2);
-	
+	JP.boards.push(board1);
 	
 	// Old set-up
 	console.log("BUZZERS ❌");
