@@ -206,42 +206,6 @@ $(function() {
 			console.log("BUZZERS ✅");
 	}
 	
-	function showHighScoreAndAnimate(playerThatAnswered) {
-		// Calculate highscore
-	    for(var i = 0; i < 3; i++){
-	        var playerHighscore = JP.players[i].score == 0 ? "000" : JP.players[i].score;
-	        $("#highscore .p" + parseInt(i+1) + " span").html(playerHighscore);
-	    }
-	    
-		// Show the highscore board
-		$("#highscore").fadeIn('fast', function(){
-		
-			// Grow and shrink that players' points
-			$("#highscore .p" + playerThatAnswered + " span").animate({fontSize: 130.0}, 250, function(){
-				// Animate back
-				$(this).animate({fontSize: 120.0}, 250);
-			});
-
-		});
-			
-	}
-	
-	/* If Click on gifhscore bubble */
-	$("#highscore .p1").click(function(e){
-		$("#nameOverlay").html("TANTAN").fadeIn('fast');
-	});
-	
-	$("#highscore .p2").click(function(e){
-		$("#nameOverlay").html("FLUFF").fadeIn('fast');
-	});	
-	
-	$("#highscore .p3").click(function(e){
-		$("#nameOverlay").html("ANTILA").fadeIn('fast');
-	});
-	
-	$("#nameOverlay").click(function(e){
-		$(this).fadeOut('fast');
-	});
 
 	if ('getGamepads' in navigator) {
  console.log("Gamepad API Available") // The API is supported!
