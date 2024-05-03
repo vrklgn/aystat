@@ -3,12 +3,9 @@ $(function() {
 	var player1 = new Player();
 	var player2 = new Player();
 	var player3 = new Player();
-	
-	// TODO: set dynamically after counting boards in HTML	
-	var board1 = new Board();
+	;
 	
 	JP.players.push(player1, player2, player3);
-	JP.boards.push(board1);
 	
 	// Old set-up
 	console.log("BUZZERS ❌");
@@ -30,7 +27,6 @@ $(function() {
 
 		if((e.keyCode == 81)){
 			setOKToAnswer() 
-			//JP.answersAccepted = true;
 		}
 
 		
