@@ -24,7 +24,8 @@ $(function() {
 		playerThatIsAnswering,
 		questionCount = 0,
 		currentCategoryHeader = 0,
-		isTestingSounds = 1;
+		isTestingSounds = 1,
+		answersAccepted = false;
 	
 	$(".overlay").hide();
 		
