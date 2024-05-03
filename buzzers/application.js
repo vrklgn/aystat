@@ -102,8 +102,6 @@ $(function() {
 			}
 		}	
 		
-		
-		
 		// Man trycker på "P". Spela det-kukar-ur-ljudet
 		if (e.keyCode == 80) {
 			var theSound = $("#sKukarUr")[0];
@@ -159,22 +157,6 @@ $(function() {
 		playerIsAnswering = 0;
 	}
 	
-
-	
-	function toggleHighScores(){
-		if($("#highscore").is(":visible")){
-			$("#highscore").fadeOut();
-		} else {
-			// If highscore will be shown, update the scores
-			for(var i = 0; i < 3; i++){
-				var playerHighscore = JP.players[i].score == 0 ? "000" : JP.players[i].score;
-				//alert(i+1 + ": " + playerHighscore);
-				$("#highscore .p" + parseInt(i+1) + " span").html(playerHighscore);
-			}
-			
-			$("#highscore").fadeIn();
-		}
-	}
 	
 	function pauseAllSounds(){
 		$("#round1 .c2 audio").each(function(e){
@@ -182,24 +164,6 @@ $(function() {
 		});
 	}
 	
-	
-	function toggleVisibleVideoPlayState(){
-		$(".videoOverlay video:visible")[0].paused ? $(".videoOverlay video:visible")[0].play() : $(".videoOverlay video:visible")[0].pause();
-	}
-	
-	// When a video finishes, hide all shit and reset
-	$(".videoOverlay video").each(function(e){
-		var video = $(this)[0];
-		video.addEventListener('ended',hideVideoAndReset,false);
-	});
-	
-	function hideVideoAndReset() {
-		if($(".videoOverlay video:visible")) {
-			$(".videoOverlay video:visible").hide();
-			$(".videoOverlay").fadeOut('fast');
-			reset();
-		}
-	}
 	
 	function setOKToAnswer() {
 			JP.answersAccepted = true;
