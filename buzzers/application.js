@@ -46,6 +46,7 @@ $(function() {
 			if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
 			JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+			console.log (playerThatIsAnswering);
 			
 			pauseAllSounds();
 			
