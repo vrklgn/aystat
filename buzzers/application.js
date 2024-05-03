@@ -3,7 +3,6 @@ $(function() {
 	var player1 = new Player();
 	var player2 = new Player();
 	var player3 = new Player();
-	;
 	
 	JP.players.push(player1, player2, player3);
 	
