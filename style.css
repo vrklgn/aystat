@@ -91,7 +91,7 @@ html {
 }
 
 body {
-	background-color: #FEF4F2;
+	background-color: #545499;
 	font-family: "Lota Grotesque", Helvetica, sans-serif;
 	font-size: 16px;
 	color: #424242;
@@ -100,7 +100,6 @@ body {
 	background-size: 40px 40px;
 	background-image:
 		linear-gradient(to right, grey 1px, transparent 1px),
-		linear-gradient(to bottom, grey 1px, transparent 1px);
 }
 
 #finalQuestion, #finalQuestionCategory {
