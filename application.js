@@ -20,7 +20,7 @@ $(function() {
 		playerThatIsAnswering,
 		questionCount = 0,
 		currentCategoryHeader = 0,
-		isTestingSounds = 1;
+		isTestingSounds = 0;
 	
 	$(".overlay").hide();
 		
