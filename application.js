@@ -121,16 +121,14 @@ $(function() {
 		if(e.keyCode == 39 && round == 1 && !questionAvailable && !JP.answersAccepted){
 			$("#categories h1").fadeOut('fast', function(e){
 				currentCategoryHeader++;
-				if(currentCategoryHeader >=5) {
+				if(currentCategoryHeader >=3) {
 					$('#round1 .category > div').hide();
 					var delay = 80;
                     $("#categories").fadeOut(300, function(){
-                        for (var i=0; i < 5; i++) {
+                        for (var i=0; i < 3; i++) {
                             $('#round1 .category:eq(0) > div:eq('+i+')').delay(delay*i).fadeIn();
                             $('#round1 .category:eq(1) > div:eq('+i+')').delay((delay*5)+delay*i).fadeIn();
                             $('#round1 .category:eq(2) > div:eq('+i+')').delay((delay*10)+delay*i).fadeIn();
-                            $('#round1 .category:eq(3) > div:eq('+i+')').delay((delay*15)+delay*i).fadeIn();
-                            $('#round1 .category:eq(4) > div:eq('+i+')').delay((delay*20)+delay*i).fadeIn();
                         };
                     });
 					return false;
