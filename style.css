@@ -97,6 +97,10 @@ body {
 	color: #424242;
 	margin: 0;
 	padding: 0;
+	background-size: 40px 40px;
+	background-image:
+		linear-gradient(to right, grey 1px, transparent 1px),
+		linear-gradient(to bottom, grey 1px, transparent 1px);
 }
 
 #finalQuestion, #finalQuestionCategory {
