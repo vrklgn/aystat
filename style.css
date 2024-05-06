@@ -99,7 +99,7 @@ body {
 	padding: 0;
 	background-size: 40px 40px;
 	background-image:
-		linear-gradient(to right, grey 1px, transparent 1px),
+		linear-gradient(to right, transparent 1px, grey 1px),
 		linear-gradient(to bottom, transparent 1px, transparent 1px);
 }
 
