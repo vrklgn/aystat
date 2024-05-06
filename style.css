@@ -94,7 +94,7 @@ body {
 	background-color: #FFFFFA;
 	font-family: "Lota Grotesque", Helvetica, sans-serif;
 	font-size: 16px;
-	color: #424242;
+	color: #122930;
 	margin: 0;
 	padding: 0;
 	background-size: 40px 40px;
@@ -199,7 +199,7 @@ body {
 h1 {
 	margin: 20px 0 10px;
 	height: 80px;
-	color: #fff;
+	color: #122930;
 	font-size: 37px;
 	line-height: 34px;
 }
@@ -279,7 +279,7 @@ h1 {
 }
 
 #playerNameFromAnsweringPlayer {
-	color: #fff;
+	color: #122930;
 	text-align: center;
 	font-size: 260px;
 	font-weight: bold;
