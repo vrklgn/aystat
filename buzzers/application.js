@@ -28,7 +28,7 @@ $(function() {
     if (!gamepad) {
       continue;
     }
-	  	if(gamepad.buttons[0].pressed == true){
+	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted = true){
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 	// If player has already answered, return false
@@ -42,7 +42,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
-	  if(gamepad.buttons[1].pressed == true){
+	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted = true){
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
 	// If player has already answered, return false
@@ -56,7 +56,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
-	    if(gamepad.buttons[2].pressed == true){
+	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted = true){
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
 	// If player has already answered, return false
