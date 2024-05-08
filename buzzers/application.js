@@ -71,7 +71,6 @@ $(function() {
 			if(!playerIsAnswering && e.keyCode == "87"){
 				$("#sBidup")[0].play();
 				removeOverlay();
-				reset();
 			}
 			if(!playerIsAnswering) return false;
 			// Right?
@@ -112,7 +111,6 @@ $(function() {
 		JP.answersAccepted = false,
 		questionAvailable = 0,
 		playerIsAnswering = 0;
-		
 		JP.playersThatHaveAnswered = [];
 		
 		// Reset UI
