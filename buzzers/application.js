@@ -33,7 +33,7 @@ $(function() {
 		console.log ("PLAYER 1");
 			
 	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[0])) return false;
+		if(JP.playerHasAnswered(JP.players[1])) return false;
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[1]);
 		pauseAllSounds();
@@ -49,7 +49,7 @@ $(function() {
 		console.log ("PLAYER 2");
 		  
 	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[1])) return false;
+		if(JP.playerHasAnswered(JP.players[2])) return false;
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[2]);
 		pauseAllSounds();
@@ -66,7 +66,7 @@ $(function() {
 		console.log ("PLAYER 3");
 		    ;
 	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[2])) return false;
+		if(JP.playerHasAnswered(JP.players[3])) return false;
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[3]);
 		pauseAllSounds();
