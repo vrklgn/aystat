@@ -151,6 +151,7 @@ pollGamepads();
 
 				// Play wrong sound
 				$("#sBidup")[0].play();
+				pollGamepads();
 				
 				//$("#wrong").show();
 				// Remove overlay after 600 ms
