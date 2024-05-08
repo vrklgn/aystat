@@ -28,7 +28,7 @@ $(function() {
     if (!gamepad) {
       continue;
     }
-	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0])){
+	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0]) && playerIsAnswering = 0){
 		playerIsAnswering = 1;
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
@@ -43,7 +43,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
-	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[1])){
+	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[1] && playerIsAnswering = 0 )){
 		playerIsAnswering = 1;
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
@@ -58,7 +58,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
-	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[2])){
+	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[2]) && playerIsAnswering = 0){
 		playerIsAnswering = 1;
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
