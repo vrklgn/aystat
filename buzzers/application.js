@@ -29,6 +29,7 @@ $(function() {
       continue;
     }
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0])){
+		playerIsAnswering = 1;
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 	// If player has already answered, return false
@@ -43,6 +44,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
 	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[1])){
+		playerIsAnswering = 1;
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
 	// If player has already answered, return false
@@ -57,6 +59,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
 	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[2])){
+		playerIsAnswering = 1;
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
 	// If player has already answered, return false
