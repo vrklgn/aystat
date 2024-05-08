@@ -31,6 +31,7 @@ $(function() {
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true){
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
+			
 	// If player has already answered, return false
 		if(JP.playerHasAnswered(JP.players[0])) return false;
 			// Else, add to answered list as that players answers
@@ -41,10 +42,12 @@ $(function() {
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;}
+		playerIsAnswering = 1;
+			console.log(JP.playersThatHaveAnswered);}
 	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true){
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
+		  
 	// If player has already answered, return false
 		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
@@ -55,10 +58,11 @@ $(function() {
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;}
+		playerIsAnswering = 1;console.log(JP.playersThatHaveAnswered);}
 	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true){
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
+		    ;
 	// If player has already answered, return false
 		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
@@ -69,7 +73,8 @@ $(function() {
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 3;}
+		playerIsAnswering = 3;
+	    console.log(console.log(JP.playersThatHaveAnswered)}
     // Process the gamepad state.
   }
   // Call yourself upon the next animation frame.
