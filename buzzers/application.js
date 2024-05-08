@@ -118,14 +118,6 @@ $(function() {
 		// Reset UI
 		$(".overlay").fadeOut();
 		
-		// Is round 1 over?
-		if(questionCount >= 25 && round == 1){
-			startRound2();
-		}
-		
-		if(questionCount >= 50 && round == 2){
-			showLastQuestionCategory();
-		}
 	}
 	
 	function allPlayersWereWrong(){
@@ -155,6 +147,7 @@ $(function() {
 	
 	
 	function setOKToAnswer() {
+		questionAvailable = 1,
 			JP.answersAccepted = true;
 			console.log("BUZZERS ✅");
 	}
