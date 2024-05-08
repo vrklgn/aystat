@@ -183,6 +183,7 @@ pollGamepads();
 		
 		// Reset UI
 		$(".overlay").fadeOut();
+		pollGamepads();
 		
 	}
 	
