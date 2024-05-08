@@ -204,7 +204,7 @@ const pollGamepads = () => {
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[1].play();
+		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
@@ -218,7 +218,7 @@ const pollGamepads = () => {
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[2].play();
+		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
