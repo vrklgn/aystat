@@ -28,64 +28,59 @@ $(function() {
     if (!gamepad) {
       continue;
     }
-	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true){
-			if(JP.playerHasAnswered(JP.players[playerThatIsAnswering])) return false;
+	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted = true){
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
-			
 	// If player has already answered, return false
-		
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering]);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;
-			console.log(JP.playersThatHaveAnswered);}
-	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true){
-		  if(JP.playerHasAnswered(JP.players[playerThatIsAnswering])) return false;
+		playerIsAnswering = 1;}
+	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted = true){
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
-		  
 	// If player has already answered, return false
-		
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering]);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;
-		console.log(JP.playersThatHaveAnswered);}
-
-	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true){
-		    if(JP.playerHasAnswered(JP.players[playerThatIsAnswering])) return false;
+		playerIsAnswering = 1;}
+	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted = true){
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
-		
 	// If player has already answered, return false
-		
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 			// Else, add to answered list as that players answers
-		JJP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering]);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;
-	    console.log(JP.playersThatHaveAnswered)}
+		playerIsAnswering = 3;}
     // Process the gamepad state.
+    console.log(gamepad);
   }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
-		// Keyboard events
+};
+// Kick off the initial game loop iteration.
+pollGamepads();
+	
+	// Keyboard events
 	$("body").keyup(function(e){
 
 		if((e.keyCode == 81)){
@@ -147,7 +142,6 @@ $(function() {
 
 				// Play wrong sound
 				$("#sBidup")[0].play();
-				pollGamepads();
 				
 				//$("#wrong").show();
 				// Remove overlay after 600 ms
@@ -199,6 +193,7 @@ $(function() {
 		
 		// Let players answer again
 		playerIsAnswering = 0;
+		pollGamepads();
 	}
 	
 	
@@ -213,6 +208,7 @@ $(function() {
 		questionAvailable = 1,
 			JP.answersAccepted = true;
 			console.log("BUZZERS ✅");
+		pollGamepads();
 	}
 	
 
@@ -231,10 +227,5 @@ $(function() {
 
 
 	//#nameOverlay 
-};
-// Kick off the initial game loop iteration.
-pollGamepads();
-	
-	
 
 });
