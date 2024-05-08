@@ -134,6 +134,7 @@ $(function() {
 		
 		// Let players answer again
 		playerIsAnswering = 0;
+		pollGamepads();
 	}
 	
 	
