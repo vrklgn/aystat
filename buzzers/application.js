@@ -29,14 +29,14 @@ $(function() {
       continue;
     }
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true){
-			if(JP.playerHasAnswered(JP.players[1])) return false;
+			if(JP.playerHasAnswered(JP.players[playerThatIsAnswering])) return false;
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 			
 	// If player has already answered, return false
 		
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[1]);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
@@ -46,14 +46,14 @@ $(function() {
 		playerIsAnswering = 1;
 			console.log(JP.playersThatHaveAnswered);}
 	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true){
-		  if(JP.playerHasAnswered(JP.players[2])) return false;
+		  if(JP.playerHasAnswered(JP.players[playerThatIsAnswering])) return false;
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
 		  
 	// If player has already answered, return false
 		
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[2]);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
@@ -64,14 +64,14 @@ $(function() {
 		console.log(JP.playersThatHaveAnswered);}
 
 	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true){
-		    if(JP.playerHasAnswered(JP.players[3])) return false;
+		    if(JP.playerHasAnswered(JP.players[playerThatIsAnswering])) return false;
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
 		
 	// If player has already answered, return false
 		
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[3]);
+		JJP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
