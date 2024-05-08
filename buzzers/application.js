@@ -29,7 +29,7 @@ $(function() {
       continue;
     }
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true){
-		playerThatIsAnswering = 1; 
+		playerThatIsAnswering = 0; 
 		console.log ("PLAYER 1");
 			
 	// If player has already answered, return false
@@ -45,7 +45,7 @@ $(function() {
 		playerIsAnswering = 1;
 			console.log(JP.playersThatHaveAnswered);}
 	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true){
-		playerThatIsAnswering = 2; 
+		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 2");
 		  
 	// If player has already answered, return false
@@ -58,9 +58,11 @@ $(function() {
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;console.log(JP.playersThatHaveAnswered);}
+		playerIsAnswering = 1;
+		console.log(JP.playersThatHaveAnswered);}
+
 	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true){
-		playerThatIsAnswering = 3; 
+		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 3");
 		    ;
 	// If player has already answered, return false
@@ -73,7 +75,7 @@ $(function() {
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 3;
+		playerIsAnswering = 1;
 	    console.log(JP.playersThatHaveAnswered)}
     // Process the gamepad state.
   }
