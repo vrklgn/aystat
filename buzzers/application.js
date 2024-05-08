@@ -196,6 +196,34 @@ const pollGamepads = () => {
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 1;}
+	  if(gamepad.buttons[1].pressed == true){
+		playerThatIsAnswering = 2; 
+		console.log ("PLAYER 2");
+	// If player has already answered, return false
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+			// Else, add to answered list as that players answers
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		$("#s" + playerThatIsAnswering)[1].play();
+		$("#p" + playerThatIsAnswering + "pic").show();
+		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();
+		playerIsAnswering = 1;}
+	    if(gamepad.buttons[2].pressed == true){
+		playerThatIsAnswering = 3; 
+		console.log ("PLAYER 3");
+	// If player has already answered, return false
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+			// Else, add to answered list as that players answers
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		$("#s" + playerThatIsAnswering)[2].play();
+		$("#p" + playerThatIsAnswering + "pic").show();
+		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();
+		playerIsAnswering = 3;}
     // Process the gamepad state.
     console.log(gamepad);
   }
