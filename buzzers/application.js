@@ -35,7 +35,7 @@ $(function() {
 	// If player has already answered, return false
 		if(JP.playerHasAnswered(JP.players[0])) return false;
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
@@ -51,7 +51,7 @@ $(function() {
 	// If player has already answered, return false
 		if(JP.playerHasAnswered(JP.players[1])) return false;
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
@@ -68,7 +68,7 @@ $(function() {
 	// If player has already answered, return false
 		if(JP.playerHasAnswered(JP.players[2])) return false;
 			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1);
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
 		$("#p" + playerThatIsAnswering + "pic").show();
