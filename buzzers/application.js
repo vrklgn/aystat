@@ -74,7 +74,7 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 3;
-	    console.log(console.log(JP.playersThatHaveAnswered)}
+	    console.log(JP.playersThatHaveAnswered)}
     // Process the gamepad state.
   }
   // Call yourself upon the next animation frame.
