@@ -150,6 +150,7 @@ $(function() {
 		questionAvailable = 1,
 			JP.answersAccepted = true;
 			console.log("BUZZERS ✅");
+		pollGamepads();
 	}
 	
 
