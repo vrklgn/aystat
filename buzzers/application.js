@@ -85,11 +85,7 @@ $(function() {
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
-};
-// Kick off the initial game loop iteration.
-pollGamepads();
-	
-	// Keyboard events
+		// Keyboard events
 	$("body").keyup(function(e){
 
 		if((e.keyCode == 81)){
@@ -184,7 +180,6 @@ pollGamepads();
 		
 		// Reset UI
 		$(".overlay").fadeOut();
-		pollGamepads();
 		
 	}
 	
@@ -204,7 +199,6 @@ pollGamepads();
 		
 		// Let players answer again
 		playerIsAnswering = 0;
-		pollGamepads();
 	}
 	
 	
@@ -219,7 +213,6 @@ pollGamepads();
 		questionAvailable = 1,
 			JP.answersAccepted = true;
 			console.log("BUZZERS ✅");
-		pollGamepads();
 	}
 	
 
@@ -238,5 +231,10 @@ pollGamepads();
 
 
 	//#nameOverlay 
+};
+// Kick off the initial game loop iteration.
+pollGamepads();
+	
+	
 
 });
