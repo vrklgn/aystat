@@ -28,7 +28,7 @@ $(function() {
     if (!gamepad) {
       continue;
     }
-	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true){
+	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playersHasAnswered(JP.players[1]){
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 	// If player has already answered, return false
