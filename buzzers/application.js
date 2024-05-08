@@ -29,11 +29,12 @@ $(function() {
       continue;
     }
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true){
+			if(JP.playerHasAnswered(JP.players[1])) return false;
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
 			
 	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[1])) return false;
+		
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[1]);
 		pauseAllSounds();
@@ -45,11 +46,12 @@ $(function() {
 		playerIsAnswering = 1;
 			console.log(JP.playersThatHaveAnswered);}
 	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true){
+		  if(JP.playerHasAnswered(JP.players[2])) return false;
 		playerThatIsAnswering = 2; 
 		console.log ("PLAYER 2");
 		  
 	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[2])) return false;
+		
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[2]);
 		pauseAllSounds();
@@ -62,11 +64,12 @@ $(function() {
 		console.log(JP.playersThatHaveAnswered);}
 
 	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true){
+		    if(JP.playerHasAnswered(JP.players[3])) return false;
 		playerThatIsAnswering = 3; 
 		console.log ("PLAYER 3");
-		    ;
+		
 	// If player has already answered, return false
-		if(JP.playerHasAnswered(JP.players[3])) return false;
+		
 			// Else, add to answered list as that players answers
 		JP.playersThatHaveAnswered.push(JP.players[3]);
 		pauseAllSounds();
