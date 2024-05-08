@@ -7,7 +7,7 @@ $(function() {
 	JP.players.push(player1, player2, player3);
 	
 	// Old set-up
-	console.log("BUZZERS ❌");
+	console.log("INIT:: BUZZERS ❌");
 	var round = 1,
 		questionAvailable = 0,
 		playerIsAnswering = 0,
@@ -107,7 +107,7 @@ $(function() {
 	// TODO: Rename to newRound()
 	function reset(){		
 		// Reset all cool stuff
-		console.log("BUZZERS ❌");
+		console.log("RESET::: BUZZERS ❌");
 		JP.answersAccepted = false,
 		questionAvailable = 0,
 		playerIsAnswering = 0;
