@@ -6,6 +6,17 @@ $(function() {
 	
 	JP.players.push(player1, player2, player3);
 
+		var round = 1,
+		questionAvailable = 0,
+		playerIsAnswering = 0,
+		playerThatIsAnswering,
+		questionCount = 0,
+		currentCategoryHeader = 0,
+		isTestingSounds = 1,
+		answersAccepted = false;
+	
+	$(".overlay").hide();
+
 	const pollGamepads = () => {
   // Always call `navigator.getGamepads()` inside of
   // the game loop, not outside.
@@ -19,16 +30,7 @@ $(function() {
 	
 	// Old set-up
 	console.log("INIT:: BUZZERS ❌");
-	var round = 1,
-		questionAvailable = 0,
-		playerIsAnswering = 0,
-		playerThatIsAnswering,
-		questionCount = 0,
-		currentCategoryHeader = 0,
-		isTestingSounds = 1,
-		answersAccepted = false;
-	
-	$(".overlay").hide();
+
 		
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0]) && playerIsAnswering == 0){
 		playerIsAnswering = 1;
