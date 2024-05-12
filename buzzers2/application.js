@@ -1,5 +1,15 @@
 $(function() {
-	var JP = new Game();
+
+	const pollGamepads = () => {
+  // Always call `navigator.getGamepads()` inside of
+  // the game loop, not outside.
+  const gamepads = navigator.getGamepads();
+  for (const gamepad of gamepads) {
+    // Disregard empty slots.
+    if (!gamepad) {
+      continue;
+    }
+	  var JP = new Game();
 	var player1 = new Player();
 	var player2 = new Player();
 	var player3 = new Player();
@@ -19,15 +29,6 @@ $(function() {
 	
 	$(".overlay").hide();
 		
-	const pollGamepads = () => {
-  // Always call `navigator.getGamepads()` inside of
-  // the game loop, not outside.
-  const gamepads = navigator.getGamepads();
-  for (const gamepad of gamepads) {
-    // Disregard empty slots.
-    if (!gamepad) {
-      continue;
-    }
 	  	if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0]) && playerIsAnswering == 0){
 		playerIsAnswering = 1;
 		playerThatIsAnswering = 1; 
@@ -80,10 +81,8 @@ $(function() {
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
 };
-// Kick off the initial game loop iteration.
-pollGamepads();
-	
-	// Keyboard events
+
+		// Keyboard events
 	$("body").keyup(function(e){
 
 		if((e.keyCode == 81)){
@@ -165,6 +164,13 @@ pollGamepads();
 		}
 		
 	});
+// Kick off the initial game loop iteration.
+pollGamepads();
+	
+	
+	
+	
+
 	
 	// TODO: Rename to newRound()
 	function reset(){		
@@ -213,20 +219,6 @@ pollGamepads();
 			console.log("BUZZERS ✅");
 		pollGamepads();
 	}
-	
-
-	if ('getGamepads' in navigator) {
- console.log("Gamepad API Available") // The API is supported!
-}
-	window.addEventListener("gamepadconnected", (e) => {
-  	console.log(
-    "Gamepad connected at index %d: %s. %d buttons, %d axes.",
-    e.gamepad.index,
-    e.gamepad.id,
-    e.gamepad.buttons.length,
-    e.gamepad.axes.length,
-  );
-})
 
 
 	//#nameOverlay 
