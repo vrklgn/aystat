@@ -40,7 +40,7 @@ $(function() {
 		if(gamepad.buttons[1].pressed == true && playerIsAnswering == 0){
 			playerThatIsAnswering = 2; 
 			console.log("Player 2");}
-		if(gamepad.buttons[2].pressed == true) && playerIsAnswering == 0){
+		if(gamepad.buttons[2].pressed == true && playerIsAnswering == 0){
 			playerThatIsAnswering = 3; 
 			console.log("Player 3");}
 		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
