@@ -36,57 +36,24 @@ $(function() {
 		console.log("DUNKED")
 		playerIsAnswering = 1;
 		if(gamepad.buttons[0].pressed == true){
+			playerThatIsAnswering = 1; 
 			console.log("Player 1");}
 		if(gamepad.buttons[1].pressed == true){
+			playerThatIsAnswering = 2; 
 			console.log("Player 2");}
 		if(gamepad.buttons[2].pressed == true){
+			playerThatIsAnswering = 3; 
 			console.log("Player 3");}
+		 if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		$("#s" + playerThatIsAnswering)[0].play();
+		$("#p" + playerThatIsAnswering + "pic").show();
+		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();}
 	};
-	  if(gamepad.buttons[0].pressed == true  && !JP.playerHasAnswered(JP.players[0]) ){
-		playerIsAnswering = 1;
-		playerThatIsAnswering = 1; 
-		console.log ("PLAYER 1");
-	// If player has already answered, return false
-		  if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[0].play();
-		$("#p" + playerThatIsAnswering + "pic").show();
-		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-		$("#playerNameFromAnsweringPlayer").html(playerName);
-		$("#playerNameFromAnsweringPlayer").show();
-		playerIsAnswering = 1;}
-	  if(gamepad.buttons[1].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[1] && playerIsAnswering == 0 )){
-		playerIsAnswering = 1;
-		playerThatIsAnswering = 2; 
-		console.log ("PLAYER 2");
-	// If player has already answered, return false
-		  if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[0].play();
-		$("#p" + playerThatIsAnswering + "pic").show();
-		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-		$("#playerNameFromAnsweringPlayer").html(playerName);
-		$("#playerNameFromAnsweringPlayer").show();}
-	    if(gamepad.buttons[2].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[2]) && playerIsAnswering == 0){
-		playerIsAnswering = 1;
-		playerThatIsAnswering = 3; 
-		console.log ("PLAYER 3");
-	// If player has already answered, return false
-		    if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-			// Else, add to answered list as that players answers
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[0].play();
-		$("#p" + playerThatIsAnswering + "pic").show();
-		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-		$("#playerNameFromAnsweringPlayer").html(playerName);
-		$("#playerNameFromAnsweringPlayer").show();}
-    // Process the gamepad state.
-  }
+
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
   window.requestAnimationFrame(pollGamepads);
