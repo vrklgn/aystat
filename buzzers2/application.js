@@ -37,9 +37,9 @@ $(function() {
 		playerIsAnswering = 1;
 		if(gamepad.buttons[0].pressed == true){
 			console.log("Player 1");}
-		if(gamepad.buttons[1].pressed == true{
+		if(gamepad.buttons[1].pressed == true){
 			console.log("Player 2");}
-		if(gamepad.buttons[2].pressed == true{
+		if(gamepad.buttons[2].pressed == true){
 			console.log("Player 3");}
 	};
 	  if(gamepad.buttons[0].pressed == true  && !JP.playerHasAnswered(JP.players[0]) ){
