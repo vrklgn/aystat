@@ -32,8 +32,17 @@ $(function() {
 	
 	// Old set-up
 	  const dunk = (element) => element.pressed === true;
-	if(gamepad.buttons.some(dunk)){console.log("DUNKED")};
-	  if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0]) && playerIsAnswering == 0){
+	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true && playerIsAnswering == 0){
+		console.log("DUNKED")
+		playerIsAnswering = 1;
+		if(gamepad.buttons[0].pressed == true){
+			console.log("Player 1");}
+		if(gamepad.buttons[1].pressed == true{
+			console.log("Player 2");}
+		if(gamepad.buttons[2].pressed == true{
+			console.log("Player 3");}
+	};
+	  if(gamepad.buttons[0].pressed == true  && !JP.playerHasAnswered(JP.players[0]) ){
 		playerIsAnswering = 1;
 		playerThatIsAnswering = 1; 
 		console.log ("PLAYER 1");
