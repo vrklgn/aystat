@@ -75,7 +75,6 @@ $(function() {
 		$("#playerNameFromAnsweringPlayer").show();
 		playerIsAnswering = 3;}
     // Process the gamepad state.
-    console.log(gamepad);
   }
   // Call yourself upon the next animation frame.
   // (Typically this happens every 60 times per second.)
