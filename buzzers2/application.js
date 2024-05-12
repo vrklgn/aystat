@@ -33,8 +33,8 @@ $(function() {
 	// Old set-up
 	  const dunk = (element) => element.pressed === true;
 	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true && playerIsAnswering == 0){
+		if(!JP.answersAccepted || playerIsAnswering) return false;
 		console.log("DUNKED")
-		playerIsAnswering = 1;
 		if(gamepad.buttons[0].pressed == true){
 			playerThatIsAnswering = 1; 
 			console.log("Player 1");}
@@ -44,7 +44,7 @@ $(function() {
 		if(gamepad.buttons[2].pressed == true){
 			playerThatIsAnswering = 3; 
 			console.log("Player 3");}
-		 if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
 		$("#s" + playerThatIsAnswering)[0].play();
@@ -52,6 +52,7 @@ $(function() {
 		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
 		$("#playerNameFromAnsweringPlayer").html(playerName);
 		$("#playerNameFromAnsweringPlayer").show();}
+	 	playerIsAnswering = 1;
 	};
 
   // Call yourself upon the next animation frame.
