@@ -18,6 +18,7 @@ $(function() {
 	$(".overlay").hide();
 
 	const pollGamepads = () => {
+	console.log("INIT:: BUZZERS ❌");
   // Always call `navigator.getGamepads()` inside of
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
@@ -29,7 +30,8 @@ $(function() {
 
 	
 	// Old set-up
-	console.log("INIT:: BUZZERS ❌");
+	  const = dunk = (element) => element.pressed === true;
+	if(array.some(dunk){console.log("DUNKED")};
 	  if(gamepad.buttons[0].pressed == true && JP.answersAccepted == true && !JP.playerHasAnswered(JP.players[0]) && playerIsAnswering == 0){
 		playerIsAnswering = 1;
 		playerThatIsAnswering = 1; 
