@@ -3,6 +3,7 @@ $(function() {
 	var player1 = new Player();
 	var player2 = new Player();
 	var player3 = new Player();
+	console.log("INIT:: BUZZERS ❌");
 	
 	JP.players.push(player1, player2, player3);
 
@@ -18,7 +19,7 @@ $(function() {
 	$(".overlay").hide();
 
 	const pollGamepads = () => {
-	console.log("INIT:: BUZZERS ❌");
+	
   // Always call `navigator.getGamepads()` inside of
   // the game loop, not outside.
   const gamepads = navigator.getGamepads();
