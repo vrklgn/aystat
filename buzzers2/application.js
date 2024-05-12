@@ -33,15 +33,14 @@ $(function() {
 	// Old set-up
 	  const dunk = (element) => element.pressed === true;
 	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true && playerIsAnswering == 0){
-		if(!JP.answersAccepted || playerIsAnswering) return false;
 		console.log("DUNKED")
-		if(gamepad.buttons[0].pressed == true){
+		if(gamepad.buttons[0].pressed == true && playerIsAnswering == 0){
 			playerThatIsAnswering = 1; 
 			console.log("Player 1");}
-		if(gamepad.buttons[1].pressed == true){
+		if(gamepad.buttons[1].pressed == true && playerIsAnswering == 0){
 			playerThatIsAnswering = 2; 
 			console.log("Player 2");}
-		if(gamepad.buttons[2].pressed == true){
+		if(gamepad.buttons[2].pressed == true) && playerIsAnswering == 0{
 			playerThatIsAnswering = 3; 
 			console.log("Player 3");}
 		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
@@ -180,7 +179,6 @@ pollGamepads();
 		
 		// Let players answer again
 		playerIsAnswering = 0;
-		pollGamepads();
 	}
 	
 	
@@ -195,7 +193,6 @@ pollGamepads();
 		questionAvailable = 1,
 			JP.answersAccepted = true;
 			console.log("BUZZERS ✅");
-		pollGamepads();
 	}
 
 
