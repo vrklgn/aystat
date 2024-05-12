@@ -1,4 +1,10 @@
 $(function() {
+	var JP = new Game();
+	var player1 = new Player();
+	var player2 = new Player();
+	var player3 = new Player();
+	
+	JP.players.push(player1, player2, player3);
 
 	const pollGamepads = () => {
   // Always call `navigator.getGamepads()` inside of
@@ -9,12 +15,7 @@ $(function() {
     if (!gamepad) {
       continue;
     }
-	  var JP = new Game();
-	var player1 = new Player();
-	var player2 = new Player();
-	var player3 = new Player();
-	
-	JP.players.push(player1, player2, player3);
+
 	
 	// Old set-up
 	console.log("INIT:: BUZZERS ❌");
