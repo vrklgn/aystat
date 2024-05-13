@@ -17,58 +17,6 @@ $(function() {
 		answersAccepted = false;
 	
 	$(".overlay").hide();
-
-	const pollGamepads = () => {
-	
-  // Always call `navigator.getGamepads()` inside of
-  // the game loop, not outside.
-  const gamepads = navigator.getGamepads();
-  for (const gamepad of gamepads) {
-    // Disregard empty slots.
-    if (!gamepad) {
-      continue;
-    }
-
-	
-	// Old set-up
-	  const dunk = (element) => element.pressed === true;
-	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true ){
-		console.log("DUNKED")
-		console.log("Player is answering: " + playerIsAnswering)
-		if(gamepad.buttons[0].pressed == true && playerIsAnswering == 0 ){
-			playerThatIsAnswering = 1; 
-			console.log("Player 1");
-			console.log("Player is answering: " + playerIsAnswering);
-		}
-			
-		if(gamepad.buttons[1].pressed == true && playerIsAnswering == 0 ){
-			playerThatIsAnswering = 2; 
-			console.log("Player 2");
-			console.log("Player is answering: " + playerIsAnswering);
-		}
-			
-		if(gamepad.buttons[2].pressed == true && playerIsAnswering == 0){
-			playerThatIsAnswering = 3; 
-			console.log("Player 3");
-			console.log("Player is answering: " + playerIsAnswering);
-		}
-		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
-		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
-		pauseAllSounds();
-		answer(playerThatIsAnswering);
-	 	playerIsAnswering = 1;
-	};
-
-  // Call yourself upon the next animation frame.
-  // (Typically this happens every 60 times per second.)
-  window.requestAnimationFrame(pollGamepads);
-};
-
-
-// Kick off the initial game loop iteration.
-pollGamepads();
-
-				// Keyboard events
 	$("body").keyup(function(e){
 
 		if((e.keyCode == 81)){
@@ -150,6 +98,59 @@ pollGamepads();
 		}
 		
 	})
+
+	const pollGamepads = () => {
+	
+  // Always call `navigator.getGamepads()` inside of
+  // the game loop, not outside.
+  const gamepads = navigator.getGamepads();
+  for (const gamepad of gamepads) {
+    // Disregard empty slots.
+    if (!gamepad) {
+      continue;
+    }
+
+	
+	// Old set-up
+	  const dunk = (element) => element.pressed === true;
+	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true ){
+		console.log("DUNKED")
+		console.log("Player is answering: " + playerIsAnswering)
+		if(gamepad.buttons[0].pressed == true && playerIsAnswering == 0 ){
+			playerThatIsAnswering = 1; 
+			console.log("Player 1");
+			console.log("Player is answering: " + playerIsAnswering);
+		}
+			
+		if(gamepad.buttons[1].pressed == true && playerIsAnswering == 0 ){
+			playerThatIsAnswering = 2; 
+			console.log("Player 2");
+			console.log("Player is answering: " + playerIsAnswering);
+		}
+			
+		if(gamepad.buttons[2].pressed == true && playerIsAnswering == 0){
+			playerThatIsAnswering = 3; 
+			console.log("Player 3");
+			console.log("Player is answering: " + playerIsAnswering);
+		}
+		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
+		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
+		pauseAllSounds();
+		answer(playerThatIsAnswering);
+	 	playerIsAnswering = 1;
+	};
+
+  // Call yourself upon the next animation frame.
+  // (Typically this happens every 60 times per second.)
+  window.requestAnimationFrame(pollGamepads);
+};
+
+
+// Kick off the initial game loop iteration.
+pollGamepads();
+
+				// Keyboard events
+	
 	
 
 	function answer(pp){
