@@ -64,7 +64,11 @@ $(function() {
   window.requestAnimationFrame(pollGamepads);
 };
 
-		// Keyboard events
+
+// Kick off the initial game loop iteration.
+pollGamepads();
+
+				// Keyboard events
 	$("body").keyup(function(e){
 
 		if((e.keyCode == 81)){
@@ -145,9 +149,7 @@ $(function() {
 			}
 		}
 		
-	});
-// Kick off the initial game loop iteration.
-pollGamepads();
+	})
 	
 
 	function answer(pp){
