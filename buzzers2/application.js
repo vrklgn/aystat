@@ -192,6 +192,7 @@ pollGamepads();
 	function setOKToAnswer() {
 		questionAvailable = 1,
 			JP.answersAccepted = true;
+			JP.playersThatHaveAnswered = [];
 			console.log("BUZZERS ✅");
 	}
 
