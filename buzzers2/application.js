@@ -165,6 +165,7 @@ pollGamepads();
 		JP.answersAccepted = false,
 		questionAvailable = 0,
 		playerIsAnswering = 0;
+		console.log("Player is answering: " + playerIsAnswering);
 		JP.playersThatHaveAnswered = [];
 		
 		// Reset UI
@@ -203,6 +204,7 @@ pollGamepads();
 			JP.answersAccepted = true;
 			JP.playersThatHaveAnswered = [];
 			console.log("BUZZERS ✅");
+		
 	}
 
 
