@@ -34,6 +34,7 @@ $(function() {
 	  const dunk = (element) => element.pressed === true;
 	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true ){
 		console.log("DUNKED")
+		console.log(playerIsAnswering)
 		if(gamepad.buttons[0].pressed == true && playerIsAnswering == 0 ){
 			playerThatIsAnswering = 1; 
 			console.log("Player 1");}
