@@ -32,15 +32,15 @@ $(function() {
 	
 	// Old set-up
 	  const dunk = (element) => element.pressed === true;
-	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true){
+	if(gamepad.buttons.some(dunk) && JP.answersAccepted == true && playerIsAnswering == 0){
 		console.log("DUNKED")
-		if(gamepad.buttons[0].pressed == true && playerIsAnswering == 0){
+		if(gamepad.buttons[0].pressed == true ){
 			playerThatIsAnswering = 1; 
 			console.log("Player 1");}
-		if(gamepad.buttons[1].pressed == true && playerIsAnswering == 0){
+		if(gamepad.buttons[1].pressed == true ){
 			playerThatIsAnswering = 2; 
 			console.log("Player 2");}
-		if(gamepad.buttons[2].pressed == true && playerIsAnswering == 0){
+		if(gamepad.buttons[2].pressed == true){
 			playerThatIsAnswering = 3; 
 			console.log("Player 3");}
 		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
