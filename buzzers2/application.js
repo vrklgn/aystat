@@ -55,11 +55,7 @@ $(function() {
 		if(JP.playerHasAnswered(JP.players[playerThatIsAnswering-1])) return false;
 		JP.playersThatHaveAnswered.push(JP.players[playerThatIsAnswering-1]);
 		pauseAllSounds();
-		$("#s" + playerThatIsAnswering)[0].play();
-		$("#p" + playerThatIsAnswering + "pic").show();
-		var playerName = $("#p" + playerThatIsAnswering + "Name").html();
-		$("#playerNameFromAnsweringPlayer").html(playerName);
-		$("#playerNameFromAnsweringPlayer").show();}
+		answer(playerThatIsAnswering);
 	 	playerIsAnswering = 1;
 	};
 
@@ -153,7 +149,14 @@ $(function() {
 // Kick off the initial game loop iteration.
 pollGamepads();
 	
-	
+
+	function answer(pp){
+		$("#s" + pp)[0].play();
+		$("#p" + pp + "pic").show();
+		var playerName = $("#p" + pp + "Name").html();
+		$("#playerNameFromAnsweringPlayer").html(playerName);
+		$("#playerNameFromAnsweringPlayer").show();}
+	}
 	
 	
 
