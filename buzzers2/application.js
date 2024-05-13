@@ -189,6 +189,8 @@ pollGamepads();
 		
 		// Let players answer again
 		playerIsAnswering = 0;
+		console.log("Player is answering: " + playerIsAnswering);
+		
 	}
 	
 	
@@ -205,6 +207,7 @@ pollGamepads();
 		JP.playersThatHaveAnswered = [];
 		console.log("BUZZERS ✅");
 		playerIsAnswering = 0;
+		console.log("Player is answering: " + playerIsAnswering);
 		
 	}
 
