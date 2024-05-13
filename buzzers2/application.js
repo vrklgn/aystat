@@ -162,8 +162,8 @@ pollGamepads();
 	function reset(){		
 		// Reset all cool stuff
 		console.log("RESET::: BUZZERS ❌");
-		JP.answersAccepted = false,
-		questionAvailable = 0,
+		JP.answersAccepted = false;
+		questionAvailable = 0;
 		playerIsAnswering = 0;
 		console.log("Player is answering: " + playerIsAnswering);
 		JP.playersThatHaveAnswered = [];
@@ -200,10 +200,11 @@ pollGamepads();
 	
 	
 	function setOKToAnswer() {
-		questionAvailable = 1,
-			JP.answersAccepted = true;
-			JP.playersThatHaveAnswered = [];
-			console.log("BUZZERS ✅");
+		questionAvailable = 1;
+		JP.answersAccepted = true;
+		JP.playersThatHaveAnswered = [];
+		console.log("BUZZERS ✅");
+		playerIsAnswering = 0;
 		
 	}
 
