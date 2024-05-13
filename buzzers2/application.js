@@ -146,8 +146,6 @@ $(function() {
 };
 
 
-// Kick off the initial game loop iteration.
-pollGamepads();
 
 				// Keyboard events
 	
@@ -218,6 +216,8 @@ pollGamepads();
 		pollGamepads();
 		
 	}
+// Kick off the initial game loop iteration.
+pollGamepads();
 
 
 	//#nameOverlay 
