@@ -1,10 +1,11 @@
 <html>
 <head>
-	<title>AYSTAT</title>
+	<title>Jeopardesu</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<script src="jquery.js"></script>
 	<script src="models.js"></script>
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
 	<script src="application.js"></script>
 </head>
 <body>
@@ -23,46 +24,71 @@
 		<audio id="sWrong" preload="auto" autobuffer> 
 		  <source src="sound/wrong.mp3" />
 		</audio>
-		<audio id="sKukarUr" preload="auto" autobuffer> 
-		  <source src="sound/detkukarur.mp3" />
+		<audio id="sdku" preload="auto" autobuffer> 
+		  <source src="sound/dku.mp3" />
 		</audio>
 	</div>
 	
 	<div id="testSounds">
-		
+		<div id="instructions">
+		<h3>TINK SUMMER PARTY JEOPARDY</h3>
+		<p>A Hackathon Project by Robert, Ellen & Sofia</p>
+		<p>Try buzzer sounds on this screen - press <b>➡️ ARROW RIGHT</b> when we are ready!</p>
+		<br/><br/>
+		<h3>KEY COMMANDS</h3>
+		<p><b>Q</b> = 🏁 ACTIVATE BUZZERS</p>
+		<p><b>1,2,3</b> = 1️⃣2️⃣3️⃣ BUZZ IN</p>
+		<p><b>W</b> = ❌ WRONG ANSWER</p>
+		<p><b>R</b> = ✅ RIGHT ANSWER</p>
+		<p><b>P</b> = 🎶 BANGING TUNES 🎶</p>
+		<p><b>H</b> = SHOW HIGHSCORES</p>
+		<p><b>M</b> = JUMP TO FINAL QUESTION</p>
+	</div>
 	</div>
 	
 	<div id="finalQuestionCategory">
-		<h1>Sista frågan</h1><!-- Ändra det här plox -->
+		<h1>Final Question Category</h1><!-- Ändra det här plox -->
 	</div>
 	
 	<div id="finalQuestion">
-		<!-- Ändra det här plox -->
-		<h1>""</h1>
-		<!-- Svaret är 20000 -->
+		<!-- Change me -->
+		<h1>FINAL QUESTION</h1>
+		<!-- Answer is -->
 	</div>
 	
 	<!-- Player pictures -->
-	<img src="img/nyancat.png" class="playerpic" id="p1pic" />
-	<img src="img/lazer.jpg" class="playerpic" id="p2pic" />
-	<img src="img/popipo.jpg" class="playerpic" id="p3pic" />
+	<img src="img/lilac.jpg" class="playerpic" id="p1pic" />
+	<img src="img/orange.jpg" class="playerpic" id="p2pic" />
+	<img src="img/coffee.jpg" class="playerpic" id="p3pic" />
 	
-	<h2 id="wrong">FEL</h2>
-	<h2 id="right">RÄTT</h2>
+	<h2 id="wrong">WRONG</h2>
+	<h2 id="right">RIGHT</h2>
 	<h2 id="playerNameFromAnsweringPlayer"></h2>
 	<audio id="sBidup" preload="auto" autobuffer><source src="sound/bidup.mp3" /></audio>
 	
 	<div id="highscore">
-		<div class="p1"><p style="font-size:40px;" id="p1Name">LILAC</p><span>000</span></div>
-		<div class="p2"><p style="font-size:40px;" id="p2Name">ORANGE</p><span>000</span></div>
-		<div class="p3"><p style="font-size:40px;" id="p3Name">CAPPUCINO</p><span>000</span></div>
+		<div class="p1"><p style="font-size:40px; font-family: LotaBold;" id="p1Name">Class 01</p><span>000</span></div>
+		<div class="p2"><p style="font-size:40px; font-family: LotaBold;" id="p2Name">Class 02</p><span>000</span></div>
+		<div class="p3"><p style="font-size:40px; font-family: LotaBold;" id="p3Name">Class 03</p><span>000</span></div>
 	</div>
 	
 	<!-- Categories -->
 	<div id="categories">
-		<h1>HÄR ÄR EN KATEGORI</h1>
+		<h1>CATEGORY HERE</h1>
 	</div>
-
+	
+	<div class="videoOverlay">
+		<video src="video/01.mp3">
+		</video>
+		<video src="video/02.mp4">
+		</video>
+		<video src="video/03.mp4">
+		</video>
+		<video src="video/04.mp4">
+		</video>
+		<video src="video/05.mp4">
+		</video>
+	</div>
 	
 	<!-- Question in focus -->
 	<div class="overlay">
@@ -80,54 +106,85 @@
 <div class="roundsWrapper">
 	<div id="round1" class="round">
 		<div class="category c1">
-			<h1></h1>
+			<h1>WHAT ARE YOU TINKING ABOUT?</h1>
 			<div class="one">
-				<span>MUSIC</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+				<span>100</span>
+				<div class="q">Who at Tink is organising Tinkkontrollen?</div>
 			</div>
 			<div class="two">
-				<span>HISTORY</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+				<span>200</span>
+				<div class="q">Who is the country manager in Poland?</div>
 			</div>
 			<div class="three">
-				<span>GEOGRAPHY</span>
-				<div class="q">THIS IS A CHALLENGEk</div>
+				<span>300</span>
+				<div class="q">Name 3 companies that Tink has acquired!</div>
 			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q">What does the acronym PSD2 stand for?</div>
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q">What does the acronym PSD2 stand for?</div>
+			</div>
+
 		</div>
 		
 		<div class="category c2">
-			<h1></h1>
-			<div class="one">
-				<span>MATH</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+			<h1>OH, I REMEMBER THIS SONG!</h1>
+			<div class="one sound">
+			    <span>100</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/01.mp3" /></audio> 
 			</div>
-			<div class="two">
-				<span>TECH</span>
-				<div class="q">THIS IS A CHALLENGE</div>				
+			<div class="two sound">
+			    <span>200</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/02.mp3" /></audio>				
 			</div>
-			<div class="three">
-				<span>ART</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+			<div class="three sound">
+			    <span>300</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/03.mp3" /></audio>
+			</div>
+			<div class="four sound">
+			    <span>400</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/03.mp3" /></audio>
+			</div>
+			<div class="five sound">
+			    <span>500</span>
+			    <div class="q">Ljudfråga</div>
+			    <audio preload="auto" autobuffer><source src="danceq/04.mp3" /></audio>				
 			</div>
 		</div>
 		
 		<div class="category c3">
-			<h1></h1>
+			<h1>IT'S CALLED FASHION HONEY</h1>
 			<div class="one">
-				<span>LANGUAGE</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+				<span>100</span>
+				<div class="q"><div class= "picq"><IMG SRC="picq/pic1.png"></div></div>
 			</div>
 			<div class="two">
-				<span>SPORTS</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+				<span>200</span>
+				<div class="q"><div class= "picq"><IMG SRC="picq/pic2.png"></div></div>
 			</div>
 			<div class="three">
-				<span>WOODWORK</span>
-				<div class="q">THIS IS A CHALLENGE</div>
+				<span>300</span>
+				<div class="q"><div class= "picq"><IMG SRC="picq/pic3.png"></div></div>
+			</div>
+			<div class="four">
+				<span>400</span>
+				<div class="q"><div class= "picq"><IMG SRC="picq/pic4.png"></div></div>
+			</div>
+			<div class="five">
+				<span>500</span>
+				<div class="q"><div class= "picq"><IMG SRC="picq/pic5.png"></div></div>
 			</div>
 		</div>
 	
-		</div>
+	
+		
 	</div>
 	<!-- End of round 1 -->
 

@@ -16,8 +16,10 @@ video {
 	width: 100%;
 }
 
+
+
 .videoOverlay {
-	background-color: #000;
+
 	z-index: 101;
 	width: 100%;
 	height: 100%;
@@ -31,8 +33,17 @@ video {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: #FEF4F2;
+	background-color: #000;
 	z-index: 4000;	
+}
+
+#instructions {
+	font-family: monospace;
+	position: relative;
+	margin-left: 100px;
+	text-align: center;
+	margin-top: 100px;
+	color: #FFF;
 }
 
 #highscore {
@@ -41,21 +52,22 @@ video {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: #FEF4F2;
+	background-color: rgba(000, 000, 000, 0.7);
 	z-index: 10000;
 	display: none;
 }
 
 #highscore div {
-	color: #FEF4F2;
-	width: 280px;
-	height: 180px;
+	color: #000;
+	width: 380px;
+	height: 280px;
 	padding-top: 100px;
 	float: left;
 	text-align: center;
-	border-radius: 300px;
+	border-radius: 500px;
 	font-size: 120px;
 	text-transform: uppercase;
+	font-family: "permanent";
 	line-height: 80px;
 	margin-top: 160px;
 	margin-right: 10px;
@@ -75,6 +87,12 @@ video {
 	display: none;
 }
 
+.picq img{
+	border-radius: 10px;
+	max-width: 80%;
+}
+
+
 p {
 	margin: 0;
 	padding: 0;
@@ -92,15 +110,15 @@ html {
 
 body {
 	background-color: #FFFFFA;
-	font-family: "Lota Grotesque", Helvetica, sans-serif;
+	font-family: "LotaSemi", Helvetica, Arial, sans-serif;
 	font-size: 16px;
 	color: #122930;
 	margin: 0;
 	padding: 0;
 	background-size: 40px 40px;
 	background-image:
-		linear-gradient(to right, transparent 1px, transparent 1px),
-		linear-gradient(to bottom, #E9EAE9 2px, transparent 1px);
+	linear-gradient(to right, transparent 1px, transparent 1px),
+	linear-gradient(to bottom, #E9EAE9 2px, transparent 1px);
 }
 
 #finalQuestion, #finalQuestionCategory {
@@ -109,12 +127,17 @@ body {
 
 	
 #categories, #finalQuestion, #finalQuestionCategory {
-	background-color: #FEF4F2;
+	background-color: #FFFFFA;
 	height: 100%;
 	width: 100%;
+	color: #122930;
 	position: absolute;
 	z-index: 3000;
 	text-align: center;
+	background-size: 40px 40px;
+	background-image:
+	linear-gradient(to right, transparent 1px, transparent 1px),
+	linear-gradient(to bottom, #E9EAE9 2px, transparent 1px);
 }
 
 #finalQuestionCategory {
@@ -128,6 +151,9 @@ body {
 #categories h1, #finalQuestion h1, #finalQuestionCategory h1 {
 	margin-top: 250px;
 	font-size: 80px;
+	color: #122930;
+	font-family: "permanent", sans-serif;
+	line-height: 100px;
 }
 
 #finalQuestion h1 {
@@ -136,11 +162,26 @@ body {
 
 @font-face {  
   font-family: LG ;  
-  src: url( lg.otf ) format("opentype");  
+  src: url( fonts/lg.otf ) format("opentype");  
+}  
+
+@font-face {  
+  font-family: LotaBold;  
+  src: url( fonts/LotaGrotesqueBold.otf ) format("opentype");  
+}  
+
+@font-face {  
+  font-family: LotaSemi;  
+  src: url( fonts/LotaGrotesqueSemiBold.otf ) format("opentype");  
+}  
+
+@font-face {  
+  font-family: Permanent ;  
+  src: url( fonts/PermanentMarker-Regular.ttf ) format("truetype");  
 }  
 
 .overlay {
-	background-color: rgba(0, 183, 192, 0.9);
+	background-color: rgba(255, 136, 102, 0.9);
 	z-index: 100;
 	width: 100%;
 	height: 100%;
@@ -160,7 +201,7 @@ body {
 .points span {
 	background-color: #fff;
 	padding: 0 30px;
-	font: italic 36px "Baskerville", "Times New Roman", Times, serif;
+	font: italic 36px "LotaBold", sans-serif;
 }
 
 .bubble {
@@ -172,8 +213,10 @@ body {
 	margin: 20px auto;
 	border-radius: 331px;
 	text-align: center;
-	font-size: 72px;
+	font-size: 60px;
 	text-transform: uppercase;
+	font-family: "LotaBold", sans-serif;
+	font-weight: bold;
 	/* Fixes for center */
 	display: table; 
 	position: static;
@@ -190,28 +233,42 @@ body {
 }
 
 .category {
-	width: 30%;
+	width: 29%;
 	height: 100%;
 	float: left;
 	text-align: center;
+	margin-right: 2%;
+	margin-left: 2%;
+	margin-top: 2%;
+  font-weight: bold;
 }
 
 h1 {
 	margin: 20px 0 10px;
 	height: 80px;
-	color: #122930;
-	font-size: 37px;
+	color: #fff;
+	font-size: 25px;
 	line-height: 34px;
 }
 
 .category div {
-	height: 250px;
+	height: 90px;
 	width: 300px;
-	background-color: red;
-	border-radius: 20px;
-	margin: 10px;
-	line-height: 250px;
-	font-size: 33px;
+	background-color: #FFD3A5;
+	border-radius: 53px;
+	margin: 10px auto;
+	margin-top: 50px;
+	line-height: 100px;
+	font-size: 40px;
+	font-family: "LotaSemi";
+}
+
+.category h1  {
+	background-color: #FF8866;
+	border-radius: 53px;
+	margin: 10px auto;
+	line-height: 80px;
+	font-family: "LotaBold";
 }
 
 /* Animate */
@@ -279,7 +336,7 @@ h1 {
 }
 
 #playerNameFromAnsweringPlayer {
-	color: #122930;
+	color: #fff;
 	text-align: center;
 	font-size: 260px;
 	font-weight: bold;
@@ -301,7 +358,7 @@ h1 {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: #FEF4F2;
+	background-color: #00b7c5;
 	z-index: 10001;
 	line-height: 600px;
 	text-align: center;
