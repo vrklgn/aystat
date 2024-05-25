@@ -8,7 +8,8 @@ Try buzzer sounds on this screen - press ➡️ ARROW RIGHT when we are ready!
 
 
 
-KEY COMMANDS
+## KEY COMMANDS
+
 Q = 🏁 ACTIVATE BUZZERS
 
 1,2,3 = 1️⃣2️⃣3️⃣ BUZZ IN
