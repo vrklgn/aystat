@@ -358,7 +358,8 @@ h1 {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background-color: #00b7c5;
+	background-color: #000;
+	font-family: "permanent";
 	z-index: 10001;
 	line-height: 600px;
 	text-align: center;

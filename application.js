@@ -274,6 +274,11 @@ $(function() {
 		if(e.keyCode == 77){
 			cheatStartRound2();
 		}
+
+		// MAN TRYCKER PÅ Z
+		if(e.keyCode == 90){
+			pauseAllSounds();
+		}
 		
 		// MAN TRYCKER PÅ H
 		if(e.keyCode == 72){
@@ -310,7 +315,8 @@ $(function() {
 				}
 	}
 	// TODO: Rename to newRound()
-	function reset(){		
+	function reset(){
+		pauseAllSounds()		
 		// Reset all cool stuff
 		JP.answersAccepted = false,
 		questionAvailable = 0,
@@ -444,7 +450,7 @@ $(function() {
 	}
 	
 	/* If Click on gifhscore bubble */
-	$("#highscore .p1").click(function(e){
+	/*$("#highscore .p1").click(function(e){
 		$("#nameOverlay").html("CLASS 01").fadeIn('fast');
 	});
 	
@@ -458,7 +464,7 @@ $(function() {
 	
 	$("#nameOverlay").click(function(e){
 		$(this).fadeOut('fast');
-	});
+	});*/
 
 	//#nameOverlay 
 
