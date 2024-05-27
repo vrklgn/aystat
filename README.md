@@ -1,4 +1,4 @@
-AYSAT
+AYSTAT
 ==========
 
 QUICK GUIDE
