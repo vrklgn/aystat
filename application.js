@@ -23,6 +23,7 @@ $(function() {
 		isTestingSounds = 1;
 	
 	$(".overlay").hide();
+	$("#finalscore").hide()
 		
 	// Collect headers and questions and create objects
 	$(".round").each(function(index){
@@ -47,6 +48,28 @@ $(function() {
 	});
 	
 	// A question is clicked: Show it
+	$("#finalscore button#orange").click(function(e){
+		if ($("#finalscore input#orange")[0].value == ""){console.log("Robert stop breaking the game")}
+			else {JP.players[1].score += parseInt($("#finalscore input#orange")[0].value);
+	console.log("ORANGE: " + parseInt($("#finalscore input#orange")[0].value))}
+	})
+
+	$("#finalscore button#lilac").click(function(e){
+		if ($("#finalscore input#lilac")[0].value == ""){console.log("Robert stop breaking the game")}
+			else {JP.players[0].score += parseInt($("#finalscore input#lilac")[0].value);
+		console.log("LILAC: " + parseInt($("#finalscore input#lilac")[0].value))}
+	})
+
+	$("#finalscore button#coffee").click(function(e){
+		if ($("#finalscore input#coffee")[0].value == ""){console.log("Robert stop breaking the game")}
+			else {JP.players[2].score += parseInt($("#finalscore input#coffee")[0].value);
+		console.log("COFFEE: " + parseInt($("#finalscore input#lilac")[0].value))}
+	})
+
+
+
+
+
 	$(".category div").click(function(e){
 		if($(this).data("hasBeenDisplayed") == 1) return false;
 		$(this).data("hasBeenDisplayed", 1);
@@ -273,6 +296,12 @@ $(function() {
 		// MAN TRYCKER PÅ M
 		if(e.keyCode == 77){
 			cheatStartRound2();
+		}
+
+		if(e.keyCode == 67){
+			if($("#finalscore").is(":visible")){
+				$("#finalscore").hide();}
+				else {$("#finalscore").show();}
 		}
 
 		// MAN TRYCKER PÅ Z
