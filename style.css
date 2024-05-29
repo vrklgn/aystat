@@ -16,8 +16,55 @@ video {
 	width: 100%;
 }
 
+#finalscore {
+	z-index: 10001;
+	position: absolute;
+	font-family: monospace;
+	background-color: rgba(000, 000, 000, 0.7);
+	width: 100%;
+	height: 100%;
+	color: #FFF;
+	text-align: center;
+	top: 0;
+	left: 0;
 
+}
 
+#finalscore input {
+font-family: monospace;
+font-size: 30px;
+width: 60%;
+height:40px;
+border-radius: 10px;
+text-align: center;
+
+}
+
+#finalscore button {
+font-family: monospace;
+font-size: 30px;
+border-radius: 10px;
+text-align: center;
+width:40px;
+height:40px;
+
+}
+
+#finalscore p{
+	width: 380px;
+	height: 80px;
+	padding-top: 20px;	
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	position: relative;
+	float: left;
+	text-align: center;
+	border-radius: 10px;
+	left: 15%;
+	font-size: 30px;
+
+}
 .videoOverlay {
 
 	z-index: 101;
@@ -56,6 +103,8 @@ video {
 	z-index: 10000;
 	display: none;
 }
+
+
 
 #highscore div {
 	color: #000;
