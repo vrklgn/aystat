@@ -23,6 +23,7 @@ $(function() {
 		isTestingSounds = 1;
 	
 	$(".overlay").hide();
+	$("#buzzerstatus").hide();
 		
 	// Collect headers and questions and create objects
 	$(".round").each(function(index){
@@ -130,17 +131,12 @@ $(function() {
 		if(e.keyCode == 39 && round == 1 && !questionAvailable && !JP.answersAccepted){
 			$("#categories h1").fadeOut('fast', function(e){
 				currentCategoryHeader++;
-				if(currentCategoryHeader >=3) {
+				if(currentCategoryHeader >=1) {
 					$('#round1 .category > div').hide();
 					var delay = 80;
                     $("#categories").fadeOut(300, function(){
-                        for (var i=0; i < 5; i++) {
+                        for (var i=0; i < 0; i++) {
                             $('#round1 .category:eq(0) > div:eq('+i+')').delay(delay*i).fadeIn();
-                            $('#round1 .category:eq(1) > div:eq('+i+')').delay((delay*5)+delay*i).fadeIn();
-                            $('#round1 .category:eq(2) > div:eq('+i+')').delay((delay*10)+delay*i).fadeIn();
-                            $('#round1 .category:eq(3) > div:eq('+i+')').delay((delay*15)+delay*i).fadeIn();
-                            $('#round1 .category:eq(4) > div:eq('+i+')').delay((delay*20)+delay*i).fadeIn();
-                           
                         };
                     });
 					return false;
@@ -149,40 +145,12 @@ $(function() {
 			});
 		}
 		
-		// Round intro again!
-		// Change category (for round 2) on key right
-		if(e.keyCode == 39 && round == 2){
-			$("#categories h1").fadeOut('fast', function(e){
-				currentCategoryHeader++;
-				if(currentCategoryHeader >=5) {
-					$('#round2 .category > div').hide();
-					var delay = 80;
-                    $("#categories").fadeOut(300, function(){
-                        for (var i=0; i < 5; i++) {
-                            $('#round2 .category:eq(0) > div:eq('+i+')').delay(delay*i).fadeIn();
-                            $('#round2 .category:eq(1) > div:eq('+i+')').delay((delay*5)+delay*i).fadeIn();
-                            $('#round2 .category:eq(2) > div:eq('+i+')').delay((delay*10)+delay*i).fadeIn();
-                            $('#round2 .category:eq(3) > div:eq('+i+')').delay((delay*15)+delay*i).fadeIn();
-                            $('#round2 .category:eq(4) > div:eq('+i+')').delay((delay*20)+delay*i).fadeIn();
-                        };
-                    });
-					
-					
-					return false;
-				}
-				$("#categories h1").html(JP.boards[1].categories[currentCategoryHeader].title).fadeIn('fast');
-			});
-		}
-		
-		// Is on almost last slide, will display the last question. PLACE YOUR BETS PEOPLE
-		if(e.keyCode == 39	&& showingLastQuestionCategory == 1){
-			showLastQuestion();
-		}
 		
 		// Set OK to answer!
-		if(e.keyCode == "13" && questionAvailable) {
+		if(e.keyCode == "81") {
 			// OK to answer!
 			JP.answersAccepted = true;
+			$("#buzzerstatus").show();
 		}
 		
 		// A player tries to answer
@@ -236,7 +204,6 @@ $(function() {
 			if(e.keyCode == 82) {
 				// Correct!							
 				//$("#right").show();
-				JP.players[playerThatIsAnswering-1].score += JP.currentQuestion.points;
 				removeOverlay();
 			
 
@@ -248,12 +215,10 @@ $(function() {
 				} else {
 					reset();
 					// If not videoOverlay, show points and count up
-					showHighScoreAndAnimate(playerThatIsAnswering);
 				}
 								
 			} else {
 				// Wrong		
-				JP.players[playerThatIsAnswering-1].score -= JP.currentQuestion.points;
 				
 				// Play wrong sound
 				$("#sBidup")[0].play();
@@ -263,48 +228,11 @@ $(function() {
 				//$("#wrong").show();
 				// Remove overlay after 600 ms
 				setTimeout(removeOverlay,600);	
-				console.log("Player was wrong - turn sound on in 2s")
-				setTimeout(soundOn,2000);
+
 
 
 			}
 		}	
-		
-		// MAN TRYCKER PÅ M
-		if(e.keyCode == 77){
-			cheatStartRound2();
-		}
-
-		// MAN TRYCKER PÅ Z
-		if(e.keyCode == 90){
-			pauseAllSounds();
-		}
-		
-		// MAN TRYCKER PÅ H
-		if(e.keyCode == 72){
-			if(!questionAvailable) {
-				toggleHighScores();	
-			}
-		}
-		
-		// Spacebar. Ifall en video visas, pausa / spela den
-		if (e.keyCode == 32) {
-			if (JP.currentQuestionElement.hasClass("video")) {
-				toggleVisibleVideoPlayState();
-			}
-		}
-		
-		// Man trycker på "P". Spela dku
-		if (e.keyCode == 80) {
-			var theSound = $("#sdku")[0];
-			if(theSound.paused) {
-				theSound.play();
-			} else {
-				// If is playing, pause instead
-				theSound.pause();
-				theSound.currentTime = 0
-			}
-		}
 		
 	});
 	
@@ -325,6 +253,7 @@ $(function() {
 		JP.playersThatHaveAnswered = [];
 		// Reset UI
 		$(".overlay").fadeOut();
+		$("#buzzerstatus").hide();
 		
 		if(questionCount >= 15 && round == 1){
 			showLastQuestionCategory();
@@ -426,6 +355,7 @@ $(function() {
 		if (questionAvailable) {
 			JP.answersAccepted = true;
 			console.log("Now OK to answer");
+
 		}
 	}
 	
