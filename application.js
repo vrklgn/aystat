@@ -298,7 +298,7 @@ $(function() {
 			cheatStartRound2();
 		}
 
-		if(e.keyCode == 67){
+		if(e.keyCode == 70){
 			if($("#finalscore").is(":visible")){
 				$("#finalscore").hide();}
 				else {$("#finalscore").show();}
